@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>菊芋营养粉 - 产品详情</title>
+    <meta content="菊芋营养粉产品详情，规格参数，营养成分" name="description">
+    <meta content="菊芋营养粉,健康食品,营养补充" name="keywords">
+    <link href="../assets/icons/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="../css/variables.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/product.css" rel="stylesheet">
+</head>
+<body>
+<!-- 导航栏 -->
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">
+            <a href="../index.html">
+                <img alt="菊芋营养粉" class="logo-img" src="../assets/images/logo.png">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="../index.html#about">关于我们</a></li>
+            <li><a href="../index.html#products">全部产品</a></li>
+            <li><a href="../index.html#contact">联系我们</a></li>
+        </ul>
+        <button aria-label="菜单" class="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<main>
+    <!-- 产品详情 -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-grid">
+                <div class="product-images">
+                    <div class="main-image">
+                        <img id="main-product-image" alt="菊芋营养粉" src="../assets/images/product-1.jpg">
+                    </div>
+                    <div class="image-thumbnails">
+                        <img alt="产品图1" onclick="changeImage(this.src)" src="../assets/images/product-1.jpg">
+                        <img alt="产品图2" onclick="changeImage(this.src)" src="../assets/images/product-1-detail.jpg">
+                        <img alt="产品图3" onclick="changeImage(this.src)" src="../assets/images/product-1-package.jpg">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h1>菊芋营养粉</h1>
+                    <div class="product-meta">
+                        <span class="sku">SKU: JY100G</span>
+                        <span class="category">类别: 营养补充</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="price">¥99.00</span>
+                        <span class="original-price">¥129.00</span>
+                    </div>
+                    <div class="product-description">
+                        <p>
+                            菊芋营养粉采用优质菊芋原料，通过先进工艺提取，保留了菊芋中的天然营养成分。富含益生元，有助于调节肠道健康。</p>
+                    </div>
+                    <div class="product-features">
+                        <h3>产品特点</h3>
+                        <ul>
+                            <li>天然提取，无添加</li>
+                            <li>富含益生元</li>
+                            <li>调节肠道健康</li>
+                            <li>改善肠道菌群</li>
+                        </ul>
+                    </div>
+                    <div class="product-specs">
+                        <h3>规格参数</h3>
+                        <table>
+                            <tr>
+                                <td>净含量</td>
+                                <td>100g/盒</td>
+                            </tr>
+                            <tr>
+                                <td>保质期</td>
+                                <td>24个月</td>
+                            </tr>
+                            <tr>
+                                <td>储存方法</td>
+                                <td>请置于阴凉干燥处</td>
+                            </tr>
+                            <tr>
+                                <td>食用方法</td>
+                                <td>每日1-2次，每次1包，温水冲调</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button onclick="updateQuantity(-1)">-</button>
+                            <input id="quantity" min="1" type="number" value="1">
+                            <button onclick="updateQuantity(1)">+</button>
+                        </div>
+                        <button class="btn btn-primary add-to-cart">加入购物车</button>
+                        <button class="btn btn-outline buy-now">立即购买</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品详细信息 -->
+    <section class="product-details-tabs">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('description')">产品详情</button>
+                <button class="tab-btn" onclick="switchTab('ingredients')">成分表</button>
+                <button class="tab-btn" onclick="switchTab('usage')">使用方法</button>
+                <button class="tab-btn" onclick="switchTab('reviews')">用户评价</button>
+            </div>
+            <div class="tab-content">
+                <div id="description" class="tab-pane active">
+                    <h3>产品详情</h3>
+                    <div class="content">
+                        <img alt="产品详情" src="../assets/images/product-detail-1.jpg">
+                        <p>
+                            菊芋，又名洋姜，是一种具有重要营养和药用价值的健康食材。我们的菊芋营养粉采用现代工艺，将菊芋的营养精华提取并浓缩，为您提供便捷的营养补充方案。</p>
+                        <h4>主要功效：</h4>
+                        <ul>
+                            <li>调节血糖</li>
+                            <li>改善肠道环境</li>
+                            <li>增强免疫力</li>
+                            <li>辅助降血脂</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="ingredients" class="tab-pane">
+                    <h3>营养成分表</h3>
+                    <table class="ingredients-table">
+                        <tr>
+                            <th>营养成分</th>
+                            <th>含量（每100g）</th>
+                            <th>营养素参考值%</th>
+                        </tr>
+                        <tr>
+                            <td>能量</td>
+                            <td>280kcal</td>
+                            <td>14%</td>
+                        </tr>
+                        <tr>
+                            <td>蛋白质</td>
+                            <td>2.5g</td>
+                            <td>4%</td>
+                        </tr>
+                        <tr>
+                            <td>碳水化合物</td>
+                            <td>65g</td>
+                            <td>22%</td>
+                        </tr>
+                        <tr>
+                            <td>膳食纤维</td>
+                            <td>15g</td>
+                            <td>60%</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="usage" class="tab-pane">
+                    <h3>使用方法</h3>
+                    <div class="usage-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <p>取1包菊芋营养粉（约10g）</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <p>加入200ml温水（约60℃）</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <p>充分搅拌均匀即可饮用</p>
+                        </div>
+                    </div>
+                    <div class="usage-notes">
+                        <h4>注意事项：</h4>
+                        <ul>
+                            <li>建议空腹或餐前30分钟服用</li>
+                            <li>每日1-2次，请勿过量</li>
+                            <li>孕妇、哺乳期妇女请遵医嘱</li>
+                            <li>对本品成分过敏者禁用</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="reviews" class="tab-pane">
+                    <h3>用户评价</h3>
+                    <div class="reviews-summary">
+                        <div class="rating-average">
+                            <span class="rating">4.8</span>
+                            <div class="stars">★★★★★</div>
+                            <span class="total-reviews">共152条评价</span>
+                        </div>
+                    </div>
+                    <div class="reviews-list">
+                        <!-- 评价列表将通过JavaScript动态生成 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 相关产品 -->
+    <section class="related-products">
+        <div class="container">
+            <h2 class="section-title">相关产品</h2>
+            <div class="products-grid">
+                <!-- 相关产品将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <img alt="菊芋营养粉" class="footer-logo" src="../assets/images/logo.png">
+                <p>专注于健康食品研发</p>
+            </div>
+            <div class="footer-links">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../index.html#about">关于</a></li>
+                    <li><a href="../index.html#products">产品</a></li>
+                    <li><a href="../index.html#contact">联系</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>联系我们</h4>
+                <p>电话：XXX-XXXX-XXXX</p>
+                <p>邮箱：contact@example.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 菊芋营养粉. 保留所有权利.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/product.js"></script>
+</body>
+</html>
