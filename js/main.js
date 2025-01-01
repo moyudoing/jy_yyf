@@ -254,7 +254,7 @@ const teamMembers = [
         id: 1,
         name: '张教授',
         title: '首席科学家',
-        image: './assets/images/team/member-1.jpg',
+        image: './assets/images/team/member/zxs.jpg',
         description: '国家特聘专家，30年食品研发经验',
         details: {
             education: '食品工程博士',
@@ -267,7 +267,7 @@ const teamMembers = [
         id: 2,
         name: '李博士',
         title: '技术总监',
-        image: './assets/images/team/member-2.jpg',
+        image: './assets/images/team/member/zhm.jpg',
         description: '工艺开发专家，负责产品研发',
         details: {
             education: '生物工程博士',
@@ -280,7 +280,7 @@ const teamMembers = [
         id: 3,
         name: '王工程师',
         title: '质量总监',
-        image: './assets/images/team/member-3.jpg',
+        image: './assets/images/team/member/cjs.jpg',
         description: '质量控制专家，把控产品品质',
         details: {
             education: '食品质量与安全硕士',
