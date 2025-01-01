@@ -1,0 +1,23 @@
+{
+  "name": "your_project_name",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup-dirs": "powershell -File scripts/setup-directories.ps1",
+    "generate-placeholders": "node scripts/generate-placeholders.js",
+    "generate-video": "node scripts/generate-video.js",
+    "generate-assets": "npm run generate-placeholders && npm run generate-video",
+    "check-files": "node scripts/check-files.js",
+    "init": "node scripts/init-project.js",
+    "setup": "npm run setup-dirs && npm run init && npm run generate-assets && npm run check-files"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^25.0.1",
+    "canvas": "^2.11.2"
+  }
+}

@@ -1,6 +1,6 @@
 // 产品图片切换
 function changeImage(src) {
-    document.getElementById('main-product-image').src = src;
+    document.getElementById('main-products-image').src = src;
 }
 
 // 数量选择器
@@ -84,13 +84,13 @@ const relatedProducts = [
         id: 1,
         name: '菊芋营养粉礼盒装',
         price: '¥288',
-        image: '../assets/images/product-3.jpg'
+        image: '../assets/images/products-3.jpg'
     },
     {
         id: 2,
         name: '菊芋营养粉家庭装',
         price: '¥188',
-        image: '../assets/images/product-2.jpg'
+        image: '../assets/images/products-2.jpg'
     }
 ];
 
@@ -101,7 +101,7 @@ function renderRelatedProducts() {
 
     relatedProducts.forEach(product => {
         const productCard = document.createElement('div');
-        productCard.className = 'product-card';
+        productCard.className = 'products-card';
         productCard.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
             <h3>${product.name}</h3>

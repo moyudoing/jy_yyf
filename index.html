@@ -9,7 +9,7 @@
     <meta name="description" content="源自天然 • 科技萃取 • 营养健康">
     <meta name="keywords" content="菊芋,营养粉,健康食品">
     <meta name="author" content="菊芋营养粉研发团队">
-    <link href="./css/variables.css" rel="stylesheet">
+    <link href="css/base/variables.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
 </head>
 
@@ -54,7 +54,7 @@
     <!-- Banner部分 -->
     <section id="home" class="banner">
         <div class="banner-image">
-            <img src="assets/images/team/team.png" alt="背景图片" class="banner-bg">
+            <img alt="背景图片" class="banner-bg" src="assets/images/banner/team.png">
         </div>
         <div class="banner-overlay">
             <div class="container">
@@ -99,19 +99,19 @@
             </div>
             <div class="products-grid">
                 <div class="product-card">
-                    <img alt="菊芋营养粉" src="./assets/images/product/display/jy.png">
+                    <img alt="菊芋营养粉" src="./assets/images/products/jy/main.png">
                     <h3>菊芋营养粉</h3>
                     <p>经典配方，调节肠道健康</p>
                     <a class="btn btn-primary" href="pages/products/powder.html">了解详情</a>
                 </div>
                 <div class="product-card">
-                    <img alt="菊芋高熵营养粉" src="./assets/images/product-2.jpg">
+                    <img alt="菊芋高熵营养粉" src="./assets/images/products/jy-gs/main.png">
                     <h3>菊芋高熵营养粉</h3>
                     <p>高熵配方，提升免疫力</p>
                     <a class="btn btn-primary" href="pages/products/high-entropy.html">了解详情</a>
                 </div>
                 <div class="product-card">
-                    <img alt="菊芋高钙营养粉" src="./assets/images/product-3.jpg">
+                    <img alt="菊芋高钙营养粉" src="./assets/images/products/jy-gga/main.png">
                     <h3>菊芋高钙营养粉</h3>
                     <p>补钙配方，强健骨骼</p>
                     <a class="btn btn-primary" href="pages/products/high-calcium.html">了解详情</a>
@@ -125,12 +125,14 @@
         <div class="container">
             <h2 class="section-title">产品视频</h2>
             <div class="video-container">
-                <!--                <img alt="视频封面" class="video-poster" src="./assets/images/video-poster.jpg">-->
-                <button aria-label="播放视频" class="play-button"></button>
-                <video id="product-video">
-                    <source src="assets/videos/product.mp4" type="video/mp4">
-                    您的浏览器不支持视频播放。
+                <video id="products-video" controls>
+                    <source src="./assets/videos/product.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
                 </video>
+                <div class="play-button">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="video-poster"></div>
             </div>
         </div>
     </section>
@@ -151,22 +153,15 @@
             <h2 class="section-title">研发历程</h2>
             <div class="timeline-gallery">
                 <div class="gallery-container">
-                    <div class="gallery-item">
-                        <img alt="研发初期" class="gallery-image" src="assets/images/timeline/1.jpg">
-                        <div class="gallery-caption">
-                            <h3>2020年 - 研发启动</h3>
-                            <p>开始菊芋提取工艺研究</p>
-                        </div>
-                    </div>
-                    <!-- 更多照片项 -->
+                    <!-- 研发历程将通过JavaScript动态生成 -->
                 </div>
                 <div class="gallery-nav"></div>
             </div>
             <div class="process-diagrams">
                 <h3>研发流程</h3>
-                <img alt="研发流程图" class="process-image" src="./assets/images/process-flow.png">
+                <img alt="研发流程图" class="process-image" src="./assets/images/process/flow.png">
                 <h3>技术路线</h3>
-                <img alt="技术路线图" class="process-image" src="./assets/images/tech-route.png">
+                <img alt="技术路线图" class="process-image" src="./assets/images/process/tech-route.png">
             </div>
         </div>
     </section>
@@ -289,7 +284,7 @@
 </footer>
 
 <!-- JavaScript文件 -->
-<script src="./js/main.js"></script>
+<script src="./js/main.js" type="module"></script>
 
 <!-- 侧边导航 -->
 <div class="side-nav">
