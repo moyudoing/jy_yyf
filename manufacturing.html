@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>生产工艺 - 医药飞行检查</title>
+    <link href="css/variables.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="manufacturing-process">
+    <div class="container">
+        <h2 class="section-title">生产工艺流程</h2>
+        <div class="process-timeline">
+            <!-- 工艺步骤 -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // 监听滚动显示动画
+    const processSteps = document.querySelectorAll('.process-step');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {threshold: 0.3});
+
+    processSteps.forEach(step => observer.observe(step));
+</script>
+</body>
+</html>
