@@ -14,6 +14,10 @@
 </head>
 
 <body>
+<!-- 滚动进度条 -->
+<div class="scroll-progress">
+    <div class="scroll-progress-bar"></div>
+</div>
 <!-- 导航栏 -->
 <nav class="navbar">
     <div class="container">
@@ -145,16 +149,24 @@
     <section id="development" class="section">
         <div class="container">
             <h2 class="section-title">研发历程</h2>
-            <div class="development-content">
-                <div class="timeline">
-                    <!-- 时间线将通过JavaScript动态生成 -->
+            <div class="timeline-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <img alt="研发初期" class="gallery-image" src="assets/images/timeline/1.jpg">
+                        <div class="gallery-caption">
+                            <h3>2020年 - 研发启动</h3>
+                            <p>开始菊芋提取工艺研究</p>
+                        </div>
+                    </div>
+                    <!-- 更多照片项 -->
                 </div>
-                <div class="process-diagrams">
-                    <h3>研发流程</h3>
-                    <img alt="研发流程图" class="process-image" src="./assets/images/process-flow.png">
-                    <h3>技术路线</h3>
-                    <img alt="技术路线图" class="process-image" src="./assets/images/tech-route.png">
-                </div>
+                <div class="gallery-nav"></div>
+            </div>
+            <div class="process-diagrams">
+                <h3>研发流程</h3>
+                <img alt="研发流程图" class="process-image" src="./assets/images/process-flow.png">
+                <h3>技术路线</h3>
+                <img alt="技术路线图" class="process-image" src="./assets/images/tech-route.png">
             </div>
         </div>
     </section>
@@ -206,38 +218,38 @@
     </section>
 
     <!-- 联系我们部分 -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">联系我们</h2>
-            <div class="contact-content">
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">姓名</label>
-                        <input id="name" name="name" required type="text">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">邮箱</label>
-                        <input id="email" name="email" required type="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">电话</label>
-                        <input id="phone" name="phone" required type="tel">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">留言</label>
-                        <textarea id="message" name="message" required rows="4"></textarea>
-                    </div>
-                    <button class="btn btn-primary" type="submit">发送消息</button>
-                </form>
-                <div class="contact-info">
-                    <h3>联系方式</h3>
-                    <p><strong>地址：</strong>XX省XX市XX区XX路XX号</p>
-                    <p><strong>电话：</strong>XXX-XXXX-XXXX</p>
-                    <p><strong>邮箱：</strong>contact@example.com</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!--    <section id="contact" class="section">-->
+    <!--        <div class="container">-->
+    <!--            <h2 class="section-title">联系我们</h2>-->
+    <!--            <div class="contact-content">-->
+    <!--                <form id="contact-form" class="contact-form">-->
+    <!--                    <div class="form-group">-->
+    <!--                        <label for="name">姓名</label>-->
+    <!--                        <input id="name" name="name" required type="text">-->
+    <!--                    </div>-->
+    <!--                    <div class="form-group">-->
+    <!--                        <label for="email">邮箱</label>-->
+    <!--                        <input id="email" name="email" required type="email">-->
+    <!--                    </div>-->
+    <!--                    <div class="form-group">-->
+    <!--                        <label for="phone">电话</label>-->
+    <!--                        <input id="phone" name="phone" required type="tel">-->
+    <!--                    </div>-->
+    <!--                    <div class="form-group">-->
+    <!--                        <label for="message">留言</label>-->
+    <!--                        <textarea id="message" name="message" required rows="4"></textarea>-->
+    <!--                    </div>-->
+    <!--                    <button class="btn btn-primary" type="submit">发送消息</button>-->
+    <!--                </form>-->
+    <!--                <div class="contact-info">-->
+    <!--                    <h3>联系方式</h3>-->
+    <!--                    <p><strong>地址：</strong>XX省XX市XX区XX路XX号</p>-->
+    <!--                    <p><strong>电话：</strong>XXX-XXXX-XXXX</p>-->
+    <!--                    <p><strong>邮箱：</strong>contact@example.com</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </section>-->
 </main>
 
 <!-- 返回顶部按钮 -->
@@ -278,6 +290,27 @@
 
 <!-- JavaScript文件 -->
 <script src="./js/main.js"></script>
+
+<!-- 侧边导航 -->
+<div class="side-nav">
+    <div class="side-nav-item" data-target="high-entropy">
+        <i class="fas fa-flask"></i>
+        <span class="side-nav-tooltip">菊芋高熵营养粉</span>
+    </div>
+    <div class="side-nav-item" data-target="high-calcium">
+        <i class="fas fa-bone"></i>
+        <span class="side-nav-tooltip">菊芋高钙营养粉</span>
+    </div>
+    <div class="side-nav-item" data-target="powder">
+        <i class="fas fa-leaf"></i>
+        <span class="side-nav-tooltip">菊芋营养粉</span>
+    </div>
+</div>
+
+<!-- 移动端产品导航 -->
+<div class="mobile-product-nav">
+    <span>查看全部产品</span>
+</div>
 </body>
 
 </html>

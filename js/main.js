@@ -46,25 +46,25 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// 表单提交
-const contactForm = document.getElementById('contact-form');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    // 获取表单数据
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-
-    // TODO: 发送表单数据到服务器
-    console.log('Form submitted:', data);
-
-    // 清空表单
-    contactForm.reset();
-
-    // 显示成功消息
-    alert('消息已发送，我们会尽快与您联系！');
-});
+// // 表单提交
+// const contactForm = document.getElementById('contact-form');
+//
+// contactForm.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//
+//     // 获取表单数据
+//     const formData = new FormData(contactForm);
+//     const data = Object.fromEntries(formData);
+//
+//     // TODO: 发送表单数据到服务器
+//     console.log('Form submitted:', data);
+//
+//     // 清空表单
+//     contactForm.reset();
+//
+//     // 显示成功消息
+//     alert('消息已发送，我们会尽快与您联系！');
+// });
 
 // 产品数据
 const products = [
@@ -73,21 +73,21 @@ const products = [
         name: '菊芋营养粉 100g',
         description: '优质菊芋提取，科技萃取精华',
         image: './assets/images/product-1.jpg',
-        price: '¥99'
+        price: '¥1'
     },
     {
         id: 2,
         name: '菊芋营养粉 200g',
         description: '家庭装，更实惠',
         image: './assets/images/product-2.jpg',
-        price: '¥188'
+        price: '¥11'
     },
     {
         id: 3,
         name: '菊芋营养粉礼盒装',
         description: '高端礼盒，送礼佳选',
         image: './assets/images/product-3.jpg',
-        price: '¥288'
+        price: '¥21'
     }
 ];
 
@@ -119,10 +119,24 @@ function renderProducts() {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
         productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <p>${product.description}</p>
-            <span class="price">${product.price}</span>
+            <div class="product-image-wrapper">
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+            </div>
+            <div class="product-info">
+                <div>
+                    <h3 class="product-title">${product.name}</h3>
+                    <p class="product-description">${product.description}</p>
+                </div>
+                <div>
+                    <div class="product-price">${product.price}</div>
+                    <div class="product-actions">
+                        <a href="pages/products/${product.slug}.html" class="btn btn-primary">了解详情</a>
+                        <button class="btn btn-outline" onclick="addToCart(${product.id})">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         `;
         productsGrid.appendChild(productCard);
     });
@@ -487,4 +501,171 @@ sectionLinks.forEach(link => {
     link.addEventListener('mouseleave', () => {
         link.querySelector('i').style.transform = 'translateX(0)';
     });
+});
+
+// 导航栏滚动效果
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// 页面切换动画
+const pageTransition = {
+    init() {
+        this.overlay = document.createElement('div');
+        this.overlay.className = 'page-transition-overlay';
+        document.body.appendChild(this.overlay);
+    },
+
+    start() {
+        this.overlay.classList.add('active');
+        return new Promise(resolve => {
+            setTimeout(resolve, 300); // 减少过渡时间以提升体验
+        });
+    },
+
+    finish() {
+        this.overlay.classList.remove('active');
+    }
+};
+
+// 初始化页面
+document.addEventListener('DOMContentLoaded', () => {
+    pageTransition.init();
+
+    // 链接跳转动画
+    document.querySelectorAll('a[href^="./"], a[href^="../"]').forEach(link => {
+        link.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const target = e.currentTarget.href;
+            await pageTransition.start();
+            window.location.href = target;
+        });
+    });
+});
+
+// GitHub Pages 路径处理
+function getBasePath() {
+    const path = window.location.pathname;
+    const basePathMatch = path.match(/^\/[^/]+/);
+    return basePathMatch ? basePathMatch[0] : '';
+}
+
+function fixGitHubPagesPath(path) {
+    const basePath = getBasePath();
+    return basePath + path;
+}
+
+// 侧边导航跳转
+const sideNavItems = document.querySelectorAll('.side-nav-item');
+sideNavItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const target = item.dataset.target;
+        window.location.href = `pages/products/${target}.html`;
+    });
+});
+
+// 移动端滑动跳转
+const mobileProductNav = document.querySelector('.mobile-product-nav');
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    const swipeThreshold = 100;
+    if (touchEndX < touchStartX - swipeThreshold) {
+        // 左滑
+        window.location.href = 'pages/products/high-entropy.html';
+    }
+}
+
+// 照片滚动画廊
+class Gallery {
+    constructor(element) {
+        this.container = element.querySelector('.gallery-container');
+        this.items = element.querySelectorAll('.gallery-item');
+        this.nav = element.querySelector('.gallery-nav');
+        this.currentIndex = 0;
+        this.isAnimating = false;
+
+        this.init();
+    }
+
+    init() {
+        // 创建导航点
+        this.items.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.className = `gallery-dot${index === 0 ? ' active' : ''}`;
+            dot.addEventListener('click', () => this.goTo(index));
+            this.nav.appendChild(dot);
+        });
+
+        // 自动播放
+        setInterval(() => this.next(), 5000);
+
+        // 触摸事件
+        let startX = 0;
+        this.container.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+        });
+
+        this.container.addEventListener('touchend', e => {
+            const diff = e.changedTouches[0].clientX - startX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) this.prev();
+                else this.next();
+            }
+        });
+    }
+
+    goTo(index) {
+        if (this.isAnimating) return;
+        this.isAnimating = true;
+
+        this.container.style.transform = `translateX(-${index * 100}%)`;
+        this.nav.querySelectorAll('.gallery-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+
+        this.currentIndex = index;
+        setTimeout(() => this.isAnimating = false, 500);
+    }
+
+    next() {
+        const nextIndex = (this.currentIndex + 1) % this.items.length;
+        this.goTo(nextIndex);
+    }
+
+    prev() {
+        const prevIndex = (this.currentIndex - 1 + this.items.length) % this.items.length;
+        this.goTo(prevIndex);
+    }
+}
+
+// 初始化画廊
+document.addEventListener('DOMContentLoaded', () => {
+    const galleryElement = document.querySelector('.timeline-gallery');
+    if (galleryElement) {
+        new Gallery(galleryElement);
+    }
+});
+
+// 滚动进度条
+const scrollProgress = document.querySelector('.scroll-progress-bar');
+window.addEventListener('scroll', () => {
+    const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    scrollProgress.style.width = `${scrolled}%`;
 });

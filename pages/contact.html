@@ -7,8 +7,74 @@
     <title>联系我们 - 菊芋营养粉</title>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="../css/variables.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
+<!-- 导航栏 -->
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">
+            <img alt="菊芋营养粉" class="logo-img" src="../assets/images/logo.png">
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="../index.html#reports">检测报告</a></li>
+            <li><a href="./manufacturing.html">生产工艺</a></li>
+            <li><a href="./origin.html">原产地</a></li>
+            <li class="nav-dropdown">
+                <a href="#products">主要产品</a>
+                <div class="dropdown-content">
+                    <a href="./products/high-entropy.html">菊芋高熵营养粉</a>
+                    <a href="./products/high-calcium.html">菊芋高钙营养粉</a>
+                    <a href="./products/powder.html">菊芋营养粉</a>
+                </div>
+            </li>
+            <li><a href="./team.html">研发团队</a></li>
+            <li><a href="./contact.html">联系我们</a></li>
 
+        </ul>
+        <button aria-label="菜单" class="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<main>
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">联系我们</h2>
+            <div class="contact-content">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input id="name" name="name" required type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">邮箱</label>
+                        <input id="email" name="email" required type="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">电话</label>
+                        <input id="phone" name="phone" required type="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">留言</label>
+                        <textarea id="message" name="message" required rows="4"></textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">发送消息</button>
+                </form>
+                <div class="contact-info">
+                    <h3>联系方式</h3>
+                    <p><strong>地址：</strong>XX省XX市XX区XX路XX号</p>
+                    <p><strong>电话：</strong>XXX-XXXX-XXXX</p>
+                    <p><strong>邮箱：</strong>contact@example.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 </body>
 </html>
