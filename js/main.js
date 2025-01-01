@@ -107,11 +107,6 @@ const features = [
         icon: '💪',
         title: '营养健康',
         description: '富含益生元，调节肠道'
-    },
-    {
-        icon: '📝',
-        title: '严格检测',
-        description: '多重检测，安全放心'
     }
 ];
 
@@ -408,4 +403,88 @@ document.addEventListener('DOMContentLoaded', () => {
     renderReports();
     renderTimeline();
     renderTeamMembers();
+});
+
+// 页面过渡效果
+document.addEventListener('DOMContentLoaded', () => {
+    // 延迟加载图片
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.add('loaded');
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    lazyImages.forEach(img => imageObserver.observe(img));
+
+    // 视频容器加载优化
+    const videoContainer = document.querySelector('.video-container');
+    if (videoContainer) {
+        const video = videoContainer.querySelector('video');
+        video.addEventListener('loadeddata', () => {
+            videoContainer.classList.add('loaded');
+        });
+    }
+
+    // 页面跳转过渡
+    document.querySelectorAll('a[href^="./"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = e.currentTarget.href;
+            document.body.classList.add('page-transitioning');
+            setTimeout(() => {
+                window.location.href = target;
+            }, 500);
+        });
+    });
+});
+
+// 优化滚动性能
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    if (!scrollTimeout) {
+        scrollTimeout = setTimeout(() => {
+            scrollTimeout = null;
+            // 执行滚动相关操作
+            updateScrollProgress();
+        }, 16);
+    }
+});
+
+// 更新滚动进度
+function updateScrollProgress() {
+    const scrollProgress = document.querySelector('.scroll-progress-bar');
+    if (scrollProgress) {
+        const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        scrollProgress.style.width = `${scrolled}%`;
+    }
+}
+
+// 移动端下拉菜单
+const navDropdown = document.querySelector('.nav-dropdown');
+const dropdownToggle = navDropdown.querySelector('a');
+
+if (window.innerWidth <= 768) {
+    dropdownToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        navDropdown.classList.toggle('active');
+    });
+}
+
+// 动画效果优化
+const sectionLinks = document.querySelectorAll('.section-link');
+sectionLinks.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        link.querySelector('i').style.transform = 'translateX(5px)';
+    });
+
+    link.addEventListener('mouseleave', () => {
+        link.querySelector('i').style.transform = 'translateX(0)';
+    });
 });
