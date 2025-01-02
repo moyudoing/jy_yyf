@@ -16,6 +16,9 @@
 @import "../components/reports.css";
 @import "../components/process.css";
 @import "../components/cards.css";
+@import "../components/gallery.css";
+@import "../components/timeline.css";
+@import "../components/team.css";
 
 @import "../base/variables.css";
 @import "../base/sizes.css";
