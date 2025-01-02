@@ -6,7 +6,7 @@
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-xl);
     margin-top: var(--spacing-2xl);
 }
@@ -18,7 +18,6 @@
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
-    position: relative;
     cursor: pointer;
 }
 
@@ -47,7 +46,6 @@
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: var(--spacing-xs);
-    color: var(--text-color);
 }
 
 .member-title {
@@ -68,7 +66,7 @@
     margin-bottom: var(--spacing-xs);
 }
 
-/* 团队成员详情模态框 */
+/* 团队成员模态框 */
 .member-modal {
     max-width: 800px;
     width: 90%;
@@ -98,26 +96,50 @@
     margin-bottom: var(--spacing-md);
 }
 
+.member-achievements-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.achievement-card {
+    background: var(--background-alt);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+}
+
 .member-publications {
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
 }
 
 .publication-item {
-    margin-bottom: var(--spacing-sm);
-    font-size: 0.875rem;
-    color: var(--text-color-light);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.publication-item:last-child {
+    border-bottom: none;
 }
 
 /* 响应式调整 */
-@media (max-width: 1200px) {
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media (max-width: 768px) {
     .team-grid {
         grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .team-card {
+        max-width: 400px;
+        margin: 0 auto;
     }
 
     .member-modal-content {
@@ -126,5 +148,9 @@
 
     .member-modal-image {
         aspect-ratio: 16/9;
+    }
+
+    .member-achievements-list {
+        grid-template-columns: 1fr;
     }
 } 

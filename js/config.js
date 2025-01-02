@@ -1,21 +1,20 @@
-// 基础路径配置
+const isGitHubPages = window.location.hostname.includes('github.io');
+const BASE_URL = isGitHubPages ? '/jy_yyf' : '';
+
 export const PATHS = {
     images: {
-        base: '../assets/images',
-        products: '../assets/images/products',
-        reports: '../assets/images/reports',
-        team: '../assets/images/team',
-        process: '../assets/images/process',
-        timeline: '../../assets/images/timeline'
+        products: `${BASE_URL}/assets/images/products`,
+        reports: `${BASE_URL}/assets/images/reports`,
+        timeline: `${BASE_URL}/assets/images/timeline`,
+        team: `${BASE_URL}/assets/images/team`,
+        process: `${BASE_URL}/assets/images/process`
     },
-    videos: '../assets/videos',
-    documents: '../assets/documents'
+    videos: {
+        process: `${BASE_URL}/assets/videos`
+    }
 };
 
-// 全局配置
 export const CONFIG = {
-    imageQuality: 'high', // 'low' | 'medium' | 'high'
-    autoplayVideos: false,
-    animationsEnabled: true,
-    debugMode: false
+    baseUrl: BASE_URL,
+    apiEndpoint: isGitHubPages ? 'https://api.example.com' : '/api'
 };
