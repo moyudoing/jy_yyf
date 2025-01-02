@@ -31,11 +31,6 @@ yarn-error.log*
 *.temp
 .cache/
 
-# 静态资源源文件
-*.psd
-*.ai
-*.sketch
-
 # 压缩文件
 *.zip
 *.rar
