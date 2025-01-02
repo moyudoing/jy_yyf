@@ -60,9 +60,9 @@
         display: block;
     }
 
-    .timeline-gallery {
-        height: 300px;
-    }
+    /*.timeline-gallery {*/
+    /*    height: 300px;*/
+    /*}*/
 
     .gallery-item {
         height: 300px;
@@ -71,4 +71,23 @@
     .gallery-caption {
         padding: 1rem;
     }
+}
+
+/* 研发历程样式优化 */
+.timeline-gallery {
+    margin: 3rem 0;
+    background: var(--background-alt);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.gallery-nav {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 1;
 }
