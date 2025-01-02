@@ -32,12 +32,6 @@ yarn-error.log*
 .cache/
 
 # 静态资源源文件
-assets/src/
-assets/images/**/*.{jpg,jpeg,png,gif,webp}
-!assets/images/placeholder.jpg
-assets/videos/**/*.{mp4,webm,ogg}
-!assets/images/**/.gitkeep
-!assets/videos/**/.gitkeep
 *.psd
 *.ai
 *.sketch
