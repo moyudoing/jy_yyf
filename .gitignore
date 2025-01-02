@@ -1,26 +1,52 @@
 # 依赖
 node_modules/
+vendor/
+
+# 编译输出
+dist/
+build/
+
+# 开发工具
+.idea/
+.vscode/
+*.sublime-*
 
 # 系统文件
 .DS_Store
 Thumbs.db
 
-# 编辑器文件
-.idea/
-.vscode/
-*.swp
-
-# 构建输出
-dist/
-build/
+# 环境配置
+.env
+.env.*
+!.env.example
 
 # 日志
 *.log
-
-# 环境变量
-.env
-.env.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # 临时文件
-tmp/
-temp/
+*.tmp
+*.temp
+.cache/
+
+# 静态资源源文件
+assets/src/
+assets/images/**/*.{jpg,jpeg,png,gif,webp}
+!assets/images/placeholder.jpg
+assets/videos/**/*.{mp4,webm,ogg}
+!assets/images/**/.gitkeep
+!assets/videos/**/.gitkeep
+*.psd
+*.ai
+*.sketch
+
+# 压缩文件
+*.zip
+*.rar
+*.7z
+
+# 其他
+.htaccess
+*.bak

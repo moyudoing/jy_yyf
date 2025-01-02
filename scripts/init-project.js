@@ -1,11 +1,35 @@
 import fs from 'fs';
 import path from 'path';
 
-// 创建基本的CSS文件
+// CSS文件结构
 const cssFiles = {
-    'css/base/variables.css': '/* CSS变量定义 */',
-    'css/style.css': '/* 主样式文件 */',
-    'css/product.css': '/* 产品页样式 */'
+    // 基础样式
+    'css/base/reset.css': '/* 重置样式 */',
+    'css/base/variables.css': '/* 变量定义 */',
+    'css/base/typography.css': '/* 排版样式 */',
+
+    // 布局样式
+    'css/layout/grid.css': '/* 网格系统 */',
+    'css/layout/container.css': '/* 容器样式 */',
+    'css/layout/section.css': '/* 区块样式 */',
+
+    // 组件样式
+    'css/components/navbar.css': '/* 导航栏 */',
+    'css/components/buttons.css': '/* 按钮 */',
+    'css/components/cards.css': '/* 卡片 */',
+    'css/components/gallery.css': '/* 图片画廊 */',
+    'css/components/modal.css': '/* 模态框 */',
+    'css/components/forms.css': '/* 表单 */',
+
+    // 页面特定样式
+    'css/pages/home.css': '/* 首页样式 */',
+    'css/pages/product.css': '/* 产品页样式 */',
+    'css/pages/about.css': '/* 关于页样式 */',
+
+    // 工具类
+    'css/utils/animations.css': '/* 动画 */',
+    'css/utils/helpers.css': '/* 辅助类 */',
+    'css/utils/responsive.css': '/* 响应式 */'
 };
 
 // 创建基本的JavaScript模块文件

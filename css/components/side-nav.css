@@ -1,0 +1,78 @@
+/* 侧边导航 */
+.side-nav {
+    position: fixed;
+    right: var(--spacing-xl);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    z-index: var(--z-fixed);
+}
+
+.side-nav-item {
+    position: relative;
+    width: var(--icon-xl);
+    height: var(--icon-xl);
+    background: var(--background-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.side-nav-item:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.side-nav-tooltip {
+    position: absolute;
+    right: calc(100% + var(--spacing-md));
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--background-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    white-space: nowrap;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.side-nav-item:hover .side-nav-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .side-nav {
+        display: none;
+    }
+}
+
+/* 移动端产品导航 */
+.mobile-product-nav {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--background-color);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-lg);
+    display: none;
+    z-index: var(--z-fixed);
+}
+
+@media (max-width: 768px) {
+    .mobile-product-nav {
+        display: block;
+    }
+} 

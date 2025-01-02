@@ -1,0 +1,78 @@
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--z-modal);
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--background-color);
+    padding: var(--modal-padding);
+    border-radius: var(--radius-lg);
+    max-width: var(--modal-width);
+    max-height: 90vh;
+    overflow: auto;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: var(--icon-lg);
+    height: var(--icon-lg);
+    border-radius: 50%;
+    background: var(--background-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* 图片查看器 */
+.modal-image {
+    max-width: 100%;
+    max-height: calc(90vh - 4rem);
+    object-fit: contain;
+}
+
+/* 动画效果 */
+.modal.active .modal-content {
+    animation: modalIn 0.3s ease forwards;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: var(--spacing-lg);
+        width: 95%;
+    }
+} 

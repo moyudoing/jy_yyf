@@ -1,0 +1,53 @@
+/* 加载动画 */
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--z-modal);
+}
+
+.loading-spinner {
+    width: calc(var(--icon-xl) * 2);
+    height: calc(var(--icon-xl) * 2);
+    border: 4px solid var(--background-alt);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading-progress {
+    position: relative;
+    width: 200px;
+    height: 4px;
+    background: var(--background-alt);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.loading-text {
+    margin-top: var(--spacing-md);
+    color: var(--text-color-light);
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+} 

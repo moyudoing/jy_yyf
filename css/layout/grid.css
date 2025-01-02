@@ -1,0 +1,57 @@
+/* 基础网格 */
+.grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+/* 自适应列数 */
+.grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(var(--grid-min-width, 250px), 1fr));
+}
+
+.grid-auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(var(--grid-min-width, 250px), 1fr));
+}
+
+/* 固定列数 */
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* 网格区域 */
+.grid-areas {
+    display: grid;
+    grid-template-areas: var(--grid-areas);
+    gap: var(--spacing-lg);
+}
+
+/* 响应式网格 */
+@media (max-width: 1200px) {
+    .grid-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .grid-3, .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        gap: var(--spacing-md);
+    }
+
+    .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+    }
+} 

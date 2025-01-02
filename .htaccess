@@ -1,0 +1,52 @@
+# 启用 ES 模块支持
+<IfModule mod_mime.c>
+    AddType application/javascript .js
+</IfModule>
+
+# 允许跨域资源共享
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+# 设置正确的 MIME 类型
+<IfModule mod_mime.c>
+    AddType application/json .json
+    AddType text/css .css
+    AddType image/svg+xml .svg
+    AddType application/x-font-ttf .ttf
+    AddType application/x-font-woff .woff
+    AddType application/x-font-woff2 .woff2
+</IfModule>
+
+# 启用 URL 重写
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 如果请求的不是真实文件或目录
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # 将所有请求重定向到 index.html
+    RewriteRule ^(.*)$ index.html [L]
+</IfModule>
+
+# 设置缓存控制
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # 图片缓存 1 月
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    
+    # CSS 和 JavaScript 缓存 1 周
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    
+    # 字体文件缓存 1 月
+    ExpiresByType application/x-font-ttf "access plus 1 month"
+    ExpiresByType application/x-font-woff "access plus 1 month"
+    ExpiresByType application/x-font-woff2 "access plus 1 month"
+</IfModule> 

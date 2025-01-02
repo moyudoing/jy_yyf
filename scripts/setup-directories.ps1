@@ -23,4 +23,19 @@ $directories = @(
 foreach ($dir in $directories) {
     New-Item -ItemType Directory -Force -Path $dir
     Write-Host "Created directory: $dir"
+}
+
+# 添加CSS目录结构
+$cssDirectories = @(
+    "css/base",      # 基础样式
+    "css/layout",    # 布局样式
+    "css/components",# 组件样式
+    "css/pages",     # 页面特定样式
+    "css/themes",    # 主题样式
+    "css/utils"      # 工具类
+)
+
+foreach ($dir in $cssDirectories) {
+    New-Item -ItemType Directory -Force -Path $dir
+    Write-Host "Created CSS directory: $dir"
 } 

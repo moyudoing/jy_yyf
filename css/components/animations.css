@@ -1,0 +1,82 @@
+/* 滑动动画 */
+.slide-animation {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-animation.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 淡入动画 */
+.fade-animation {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.fade-animation.active {
+    opacity: 1;
+}
+
+/* 缩放动画 */
+.scale-animation {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scale-animation.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 研发历程动画 */
+.timeline-animation {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-animation.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-item:nth-child(even) .timeline-animation {
+    transform: translateX(30px);
+}
+
+/* 团队成员动画 */
+.team-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.team-animation.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 动画延迟 */
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.delay-4 {
+    transition-delay: 0.4s;
+}
+
+.delay-5 {
+    transition-delay: 0.5s;
+}

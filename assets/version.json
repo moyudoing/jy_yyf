@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "lastUpdate": "2024-03-15",
+  "assets": {
+    "css": {
+      "main": "style.css?v=1.0.0",
+      "vendor": "vendor.css?v=1.0.0"
+    },
+    "js": {
+      "main": "main.js?v=1.0.0",
+      "vendor": "vendor.js?v=1.0.0"
+    },
+    "images": {
+      "version": "1.0.0",
+      "updated": "2024-03-15"
+    },
+    "fonts": {
+      "iconfont": "1.0.0"
+    }
+  },
+  "cdn": {
+    "enabled": false,
+    "url": "https://cdn.example.com"
+  }
+}
