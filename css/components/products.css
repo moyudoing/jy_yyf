@@ -25,14 +25,6 @@
     padding: var(--spacing-2xl);
 }
 
-.product-image {
-    position: relative;
-    padding-top: 66.67%; /* 3:2 比例 */
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-}
-
 .product-image img {
     position: absolute;
     top: 0;
@@ -172,8 +164,16 @@
 .product-image {
     width: 100%;
     aspect-ratio: 4/3;
-    object-fit: cover;
+    object-fit: inherit;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-image {
+    position: relative;
+    padding-top: 66.67%; /* 3:2 比例 */
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
 }
 
 .product-card:hover .product-image {

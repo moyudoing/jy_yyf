@@ -11,18 +11,18 @@ export const timeline = [
         year: 2021,
         title: '工艺突破',
         description: '完成关键工艺技术研发',
-        image: `${PATHS.images.timeline}/event-2.jpg`
+        image: `${PATHS.images.timeline}/2022.jpg`
     },
     {
         year: 2022,
         title: '产品定型',
         description: '完成产品配方优化',
-        image: `${PATHS.images.timeline}/event-3.jpg`
+        image: `${PATHS.images.timeline}/2023.jpg`
     },
     {
         year: 2023,
         title: '投产运营',
         description: '建成标准化生产线',
-        image: `${PATHS.images.timeline}/event-4.jpg`
+        image: `${PATHS.images.timeline}/2024.jpg`
     }
 ];

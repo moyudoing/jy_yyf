@@ -3,7 +3,7 @@ export const team = [
         id: 1,
         name: '张教授',
         title: '首席科学家',
-        image: '../../assets/images/team/member-1.jpg',
+        image: '../../assets/images/team/member/zxs.jpg',
         achievements: [
             '国家特聘专家',
             '食品科学与工程博士',

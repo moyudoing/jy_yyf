@@ -1,57 +1,43 @@
-/* 时间轴容器 */
+/* 时间线容器 */
+.timeline-section {
+    padding: var(--spacing-3xl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
 .timeline-gallery {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-xl) 0;
 }
 
-/* 画廊容器 */
-.gallery-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--radius-lg);
-    background: var(--background-alt);
-}
-
-/* 时间轴项目 */
+/* 时间线项目 */
 .timeline-item {
-    display: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
     opacity: 0;
-    transition: opacity 0.6s ease;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .timeline-item.active {
-    display: block;
     opacity: 1;
+    transform: translateY(0);
 }
 
-/* 时间轴内容 */
 .timeline-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xl);
-    align-items: center;
-    padding: var(--spacing-xl);
-}
-
-.timeline-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
-}
-
-.timeline-info {
     padding: var(--spacing-xl);
 }
 
 .timeline-year {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: var(--spacing-md);
+    line-height: 1;
 }
 
 .timeline-title {
@@ -63,31 +49,34 @@
 .timeline-description {
     color: var(--text-color-light);
     line-height: 1.6;
-    margin-bottom: var(--spacing-lg);
 }
 
-.timeline-achievements {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
+.timeline-image {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.6s ease;
 }
 
-.achievement-item {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-sm);
-    background: white;
-    border-radius: var(--radius-sm);
-    box-shadow: var(--shadow-sm);
+.timeline-item:hover .timeline-image {
+    transform: perspective(1000px) rotateY(0);
 }
 
-.achievement-icon {
-    color: var(--primary-color);
+.timeline-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
 }
 
-/* 导航控制 */
-.gallery-nav {
+.timeline-item:hover .timeline-image img {
+    transform: scale(1.05);
+}
+
+/* 导航点 */
+.timeline-nav {
     display: flex;
     justify-content: center;
     gap: var(--spacing-md);
@@ -99,7 +88,6 @@
     height: 12px;
     border-radius: 50%;
     background: var(--background-alt);
-    border: 2px solid var(--primary-color);
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -109,56 +97,30 @@
     transform: scale(1.2);
 }
 
-/* 流程图部分 */
-.process-diagrams {
-    margin-top: var(--spacing-3xl);
-    text-align: center;
-}
-
-.process-diagrams h3 {
-    font-size: 1.5rem;
-    margin-bottom: var(--spacing-xl);
-    color: var(--text-color);
-}
-
-.process-image {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: var(--spacing-2xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-}
-
 /* 响应式调整 */
 @media (max-width: 992px) {
-    .timeline-content {
+    .timeline-item {
         grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+        gap: var(--spacing-xl);
     }
 
-    .timeline-image {
-        height: 300px;
+    .timeline-content {
+        order: 2;
+        text-align: center;
     }
 
-    .timeline-info {
-        padding: var(--spacing-lg);
-    }
+    /*.timeline-image {*/
+    /*    order: 1;*/
+    /*    transform: none;*/
+    /*}*/
 }
 
 @media (max-width: 768px) {
     .timeline-year {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .timeline-title {
         font-size: 1.25rem;
     }
-
-    .timeline-image {
-        height: 250px;
-    }
-
-    .process-image {
-        margin-bottom: var(--spacing-xl);
-    }
-} 
+}

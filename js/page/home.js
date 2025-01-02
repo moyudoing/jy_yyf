@@ -1,10 +1,12 @@
 // 导入所需模块
 import {initNavigation} from '../animation/navigation.js';
-import {initProducts} from '../modules/home/products.js';
-import {initReports} from '../modules/home/reports.js';
-import {initTimeline} from '../modules/home/timeline.js';
-import {initVideo} from '../modules/home/video.js';
+import {initProducts} from '../modules/common/products.js';
+import {initReports} from '../modules/common/reports.js';
+import {initTimeline} from '../modules/common/timeline.js';
+import {initVideo} from '../modules/common/video.js';
 import {initScrollEffects} from '../animation/scroll.js';
+import {initTeam} from '../modules/common/team.js';
+import {initFeature} from '../modules/common/features.js';
 
 // 初始化应用
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
         initTimeline();
         initVideo();
         initScrollEffects();
+        initTeam();
+        initFeature();
+        initReports();
     } catch (error) {
         console.error('初始化错误:', error);
     }

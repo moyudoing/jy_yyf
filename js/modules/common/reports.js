@@ -2,7 +2,7 @@ import {reports} from '../../data/report.js';
 
 export function initReports() {
 
-    console.log('debug');
+    // console.log('debug');
 
     // 获取相关元素
     const container = document.querySelector('.reports-grid');
@@ -14,10 +14,10 @@ export function initReports() {
 
     // 渲染报告列表
     function renderReports() {
-        // if (!Array.isArray(reports)) {
-        //     console.error('报告数据格式错误');
-        //     return;
-        // }
+        if (!Array.isArray(reports)) {
+            console.error('报告数据格式错误');
+            return;
+        }
 
         container.innerHTML = reports.map((report, index) => `
             <div class="report-card" data-index="${index}">
@@ -29,7 +29,7 @@ export function initReports() {
                 >
                 <div class="report-info">
                     <h3>${report.title}</h3>
-                    <p>${report.image}</p>
+                    <p>${report.description}</p>
                     <span class="report-date">${report.date}</span>
                 </div>
             </div>
@@ -42,9 +42,9 @@ export function initReports() {
         if (!report) return;
 
         modalImage.src = report.image;
-        modalImage.onerror = () => {
-            modalImage.src = 'assets/images/placeholder.jpg';
-        };
+        // modalImage.onerror = () => {
+        //     modalImage.src = 'assets/images/placeholder.jpg';
+        // };
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
