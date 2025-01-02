@@ -1,9 +1,10 @@
 /* 容器布局 */
 .container {
     width: 100%;
-    max-width: var(--container-max-width);
+    max-width: var(--container-max-width-1);
     margin: 0 auto;
-    padding: 0 var(--spacing-xl);
+    /*padding: 0 var(--spacing-xl);*/
+    padding: 0 2rem;
 }
 
 /* 容器变体 */
@@ -47,6 +48,8 @@
 /* 响应式调整 */
 @media (max-width: 768px) {
     .container {
+        max-width: var(--modal-width);
+        margin: 0 auto;
         padding: 0 var(--spacing-lg);
     }
 
@@ -54,4 +57,4 @@
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
-} 
+}

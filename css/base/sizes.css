@@ -1,6 +1,10 @@
 /* 尺寸变量 */
 :root {
     /* 组件尺寸 */
+    /* Layout */
+    --container-max-width-1: 1000px;
+    --container-max-width-2: 800px;
+    --container-max-width-3: 600px;
     --navbar-height: 80px;
     --footer-height: 300px;
     --sidebar-width: 280px;
@@ -33,4 +37,18 @@
     --button-padding: var(--spacing-sm) var(--spacing-lg);
     --input-padding: var(--spacing-md);
     --modal-padding: var(--spacing-xl);
+
+
+    /* Shadows */
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+    /* Z-index */
+    --z-navbar: 1000;
+    --z-modal: 1100;
+    --z-fixed: 1200;
+
+    /* Transitions */
+    --transition: all 0.3s ease;
 }

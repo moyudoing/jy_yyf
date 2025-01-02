@@ -1,10 +1,10 @@
-/* 布局工具类 */
-.container {
-    width: 100%;
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: 0 var(--spacing-xl);
-}
+/*!* 布局工具类 *!*/
+/*.container {*/
+/*    width: 100%;*/
+/*    max-width: var(--container-max-width);*/
+/*    margin: 0 auto;*/
+/*    padding: 0 var(--spacing-xl);*/
+/*}*/
 
 .container-sm {
     max-width: 640px;
