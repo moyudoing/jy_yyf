@@ -8,7 +8,7 @@ export const team = [
         description: "在食品科学领域拥有20年研究经验，主持多项国家级研究项目。",
         achievements: [
             {
-                title: "国家科技进步奖",
+                title: "国家科技`${PATHS.images.team}/member/zxs.jpg`,进步奖",
                 description: "因在食品加工技术领域的突出贡献获得表彰"
             },
             {
@@ -24,7 +24,7 @@ export const team = [
     {
         name: "李博士",
         title: "技术总监",
-        avatar: "./assets/images/team/tech-director.jpg",
+        avatar: `${PATHS.images.team}/member/zxs.jpg`,
         description: "专注于食品工程和营养学研究，负责产品配方开发。",
         achievements: [
             {
@@ -36,7 +36,7 @@ export const team = [
     {
         name: "王工程师",
         title: "生产主管",
-        avatar: "./assets/images/team/production-manager.jpg",
+        avatar: `${PATHS.images.team}/member/zxs.jpg`,
         description: "拥有10年食品生产管理经验，确保产品质量稳定。"
     }
 ];
