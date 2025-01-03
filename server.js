@@ -58,7 +58,7 @@ const directories = [
     'assets/images/process',
     'assets/images/reports',
     'assets/images/team',
-    'assets/images/timeline'
+    'assets/images/development'
 ];
 
 directories.forEach(dir => {

@@ -3,7 +3,7 @@
     --primary-color: #bd3543;
     --primary-dark: #800000;
     --primary-light: #e69090;
-    --primary-rgb: 76, 175, 80;
+    --primary-rgb: 128, 0, 0;
 
     /* Typography */
     --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -16,7 +16,7 @@
     --text-color-light: #666;
     --text-color-inverse: #fff;
     --background-color: #fff;
-    --background-alt: #ffffff;
+    --background-alt: #f9f9f9;
     --background-dark: #1a1a1a;
     --border-color: #eee;
 }

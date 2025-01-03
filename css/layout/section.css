@@ -41,6 +41,16 @@
     border-radius: var(--radius-full);
 }
 
+.section-title-h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+    line-height: 1.2;
+}
+
 .section-subtitle {
     color: var(--text-color-light);
     max-width: 600px;

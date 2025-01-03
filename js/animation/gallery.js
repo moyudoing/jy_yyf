@@ -7,67 +7,97 @@ export class Gallery {
         this.nav = element.querySelector('.gallery-nav');
         this.currentIndex = 0;
         this.isAnimating = false;
+        this.autoplayInterval = null;
+        this.touchStartX = 0;
+        this.touchEndX = 0;
 
         this.init();
     }
 
     init() {
         this.createNavigation();
-        this.setupAutoplay();
         this.setupTouchEvents();
+        this.setupMouseEvents();
+        this.startAutoplay();
     }
 
     createNavigation() {
-        this.items.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.className = `gallery-dot${index === 0 ? ' active' : ''}`;
-            const img = new Image();
-            img.src = this.items[index].querySelector('img').src;
-            dot.addEventListener('click', () => this.goTo(index));
-            this.nav?.appendChild(dot);
-        });
-    }
+        if (!this.nav || !this.items.length) return;
 
-    setupAutoplay() {
-        setInterval(() => {
-            this.next();
-        }, 5000);
+        this.items.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.className = `nav-dot${index === 0 ? ' active' : ''}`;
+            dot.setAttribute('aria-label', `Slide ${index + 1}`);
+            dot.addEventListener('click', () => this.goTo(index));
+            this.nav.appendChild(dot);
+        });
+
+        this.dots = this.nav.querySelectorAll('.nav-dot');
     }
 
     setupTouchEvents() {
-        let startX = 0;
-        let isDragging = false;
+        if (!this.container) return;
 
         this.container.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-            isDragging = true;
-        });
+            this.touchStartX = e.touches[0].clientX;
+            this.stopAutoplay();
+        }, {passive: true});
 
         this.container.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            const currentX = e.touches[0].clientX;
-            const diff = startX - currentX;
+            this.touchEndX = e.touches[0].clientX;
+            const diff = this.touchStartX - this.touchEndX;
+            const threshold = this.container.offsetWidth * 0.2;
 
-            if (Math.abs(diff) > 50) {
+            if (Math.abs(diff) > threshold) {
                 if (diff > 0) this.next();
                 else this.prev();
-                isDragging = false;
+                this.touchStartX = this.touchEndX;
             }
-        });
+        }, {passive: true});
 
         this.container.addEventListener('touchend', () => {
-            isDragging = false;
+            this.startAutoplay();
         });
     }
 
-    goTo(index) {
-        if (this.isAnimating) return;
+    setupMouseEvents() {
+        if (!this.container) return;
+
+        this.container.addEventListener('mouseenter', () => this.stopAutoplay());
+        this.container.addEventListener('mouseleave', () => this.startAutoplay());
+    }
+
+    goTo(index, animate = true) {
+        if (this.isAnimating || index === this.currentIndex) return;
         this.isAnimating = true;
 
+        // 更新导航点
+        if (this.dots) {
+            this.dots[this.currentIndex].classList.remove('active');
+            this.dots[index].classList.add('active');
+        }
+
+        // 移除当前项的活动状态
+        this.items[this.currentIndex].classList.remove('active');
+
+        // 设置过渡动画
+        if (animate) {
+            this.container.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        } else {
+            this.container.style.transition = 'none';
+        }
+
+        // 滑动到新项
         this.container.style.transform = `translateX(-${index * 100}%)`;
-        this.updateNavigation(index);
+
+        // 添加新项的活动状态
+        setTimeout(() => {
+            this.items[index].classList.add('active');
+        }, 50);
+
         this.currentIndex = index;
 
+        // 重置动画状态
         setTimeout(() => {
             this.isAnimating = false;
         }, 500);
@@ -83,10 +113,24 @@ export class Gallery {
         this.goTo(prevIndex);
     }
 
-    updateNavigation(index) {
-        const dots = this.nav.querySelectorAll('.gallery-dot');
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
-        });
+    startAutoplay(interval = 5000) {
+        if (this.autoplayInterval) return;
+        this.autoplayInterval = setInterval(() => this.next(), interval);
+    }
+
+    stopAutoplay() {
+        if (this.autoplayInterval) {
+            clearInterval(this.autoplayInterval);
+            this.autoplayInterval = null;
+        }
+    }
+
+    destroy() {
+        this.stopAutoplay();
+        // 清理事件监听器
+        if (this.container) {
+            this.container.removeEventListener('mouseenter', this.stopAutoplay);
+            this.container.removeEventListener('mouseleave', this.startAutoplay);
+        }
     }
 }

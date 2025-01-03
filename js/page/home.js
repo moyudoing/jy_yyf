@@ -7,7 +7,6 @@ import {initVideo} from '../modules/common/video.js';
 import {initScrollEffects} from '../animation/scroll.js';
 import {initTeam} from '../modules/common/team.js';
 import {initFeature} from '../modules/common/features.js';
-import {Gallery} from "../animation/gallery.js";
 
 // 初始化应用
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,9 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         initScrollEffects();
         initTeam();
         initFeature();
-        initReports();
-
-        new Gallery(document.querySelector('.timeline-gallery'));
     } catch (error) {
         console.error('初始化错误:', error);
     }

@@ -38,7 +38,7 @@ const jsModules = [
     'gallery.js',
     'reports.js',
     'video.js',
-    'timeline.js',
+    'development.js',
     'team.js',
     'modal.js',
     'scroll.js',

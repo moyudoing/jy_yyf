@@ -139,17 +139,22 @@
     <!-- 研发历程部分 -->
     <section id="development" class="section">
         <div class="container">
-            <h2 class="section-title">研发历程</h2>
-            <div class="timeline-gallery">
-                <div class="gallery-container">
-                    <!-- 研发历程将通过JavaScript动态生成 -->
+            <div class="section-header">
+                <h2 class="section-title">研发历程</h2>
+                <p class="section-subtitle">不断创新，持续进步</p>
+                <div class="timeline-gallery">
+                    <div class="timeline-container">
+                        <div class="gallery-container">
+                            <!-- 研发历程将通过JavaScript动态生成 -->
+                        </div>
+                        <div class="gallery-nav"></div>
+                    </div>
                 </div>
-                <div class="gallery-nav"></div>
             </div>
             <div class="process-diagrams">
-                <h3>研发流程</h3>
+                <h3 class="section-title">研发流程</h3>
                 <img alt="研发流程图" class="process-image" src="./assets/images/process/flow.png">
-                <h3>技术路线</h3>
+                <h3 class="section-title">技术路线</h3>
                 <img alt="技术路线图" class="process-image" src="assets/images/process/tech-route.png">
             </div>
         </div>
@@ -190,7 +195,7 @@
 </button>
 
 <!-- 页脚 -->
-<footer class="footer">
+<footer id="footer" class="footer">
     <div class="container">
         <div class="footer-content">
             <div class="footer-info">
@@ -217,23 +222,36 @@
 </footer>
 
 <!-- JavaScript文件 -->
-<script src="js/page/home.js" type="module">
-    console.error('debug')
-</script>
+<script src="js/page/home.js" type="module"></script>
 
 <!-- 侧边导航 -->
 <div class="side-nav">
-    <div class="side-nav-item" data-target="high-entropy">
-        <i class="fas fa-flask"></i>
-        <span class="side-nav-tooltip">菊芋高熵营养粉</span>
+    <div class="side-nav-item" data-target="home">
+        <ul>
+            <li>
+                <a href="#home"></a>
+                <i class="fas fa-home"></i>
+                <span class="side-nav-tooltip">首页</span>
+            </li>
+
+        </ul>
+
     </div>
-    <div class="side-nav-item" data-target="high-calcium">
-        <i class="fas fa-bone"></i>
-        <span class="side-nav-tooltip">菊芋高钙营养粉</span>
+    <div class="side-nav-item" data-target="features">
+        <i class="fas fa-star"></i>
+        <span class="side-nav-tooltip">产品特点</span>
     </div>
-    <div class="side-nav-item" data-target="powder">
-        <i class="fas fa-leaf"></i>
-        <span class="side-nav-tooltip">菊芋营养粉</span>
+    <div class="side-nav-item" data-target="products">
+        <i class="fas fa-box"></i>
+        <span class="side-nav-tooltip">产品展示</span>
+    </div>
+    <div class="side-nav-item" data-target="development">
+        <i class="fas fa-history"></i>
+        <span class="side-nav-tooltip">研发历程</span>
+    </div>
+    <div class="side-nav-item" data-target="team">
+        <i class="fas fa-users"></i>
+        <span class="side-nav-tooltip">研发团队</span>
     </div>
 </div>
 

@@ -13,15 +13,24 @@
 @import "../components/banner.css";
 @import "../components/products.css";
 @import "../components/video-player.css";
+@import "../components/video.css";
+@import "../components/loading.css";
 @import "../components/reports.css";
-@import "../components/process.css";
 @import "../components/cards.css";
-@import "../components/gallery.css";
-@import "../components/timeline.css";
+@import "../components/development.css";
 @import "../components/team.css";
+@import "../components/side-nav.css";
+@import "../components/sidebar.css";
+@import "../components/scroll.css";
+@import "../components/features.css";
+
 
 @import "../base/variables.css";
 @import "../base/sizes.css";
 @import "../base/typography.css";
 @import "../base/reset.css";
+
+@import "../utilities/animations.css";
+/*@import "../utilities/animations-enhanced.css";*/
+@import "../utilities/animations.css";
 

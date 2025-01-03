@@ -1,28 +1,26 @@
-import {PATHS} from '../config.js';
-
 export const timeline = [
     {
-        year: 2020,
-        title: '项目启动',
-        description: '开始菊芋营养粉研发项目',
-        image: `${PATHS.images.timeline}/2021.jpg`
-    },
-    {
         year: 2021,
-        title: '工艺突破',
-        description: '完成关键工艺技术研发',
-        image: `${PATHS.images.timeline}/2022.jpg`
+        title: "研发启动",
+        description: "开始菊芋营养粉的研发工作，组建研发团队",
+        image: "./assets/images/development/2021.jpg"
     },
     {
         year: 2022,
-        title: '产品定型',
-        description: '完成产品配方优化',
-        image: `${PATHS.images.timeline}/2023.jpg`
+        title: "技术突破",
+        description: "完成关键技术攻关，获得多项专利",
+        image: "./assets/images/development/2022.jpg"
     },
     {
         year: 2023,
-        title: '投产运营',
-        description: '建成标准化生产线',
-        image: `${PATHS.images.timeline}/2024.jpg`
+        title: "产品优化",
+        description: "完成产品配方优化，通过多项安全认证",
+        image: "./assets/images/development/2023.jpg"
+    },
+    {
+        year: 2024,
+        title: "正式投产",
+        description: "建立标准化生产线，实现规模化生产",
+        image: "./assets/images/development/2024.jpg"
     }
 ];

@@ -10,7 +10,7 @@ export function initTimeline() {
     galleryContainer.innerHTML = timeline.map((item, index) => `
         <div class="gallery-item ${index === 0 ? 'active' : ''}">
             <img class="gallery-image" src="${item.image}" alt="${item.title}">
-            <div class="gallery-caption">
+            <div class="gallery-caption">   
                 <h3>${item.year}年 - ${item.title}</h3>
                 <p>${item.description}</p>
             </div>

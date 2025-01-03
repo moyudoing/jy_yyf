@@ -1,8 +1,8 @@
 class TimelineSlider {
     constructor() {
-        this.slider = document.querySelector('.timeline-slider');
-        this.items = document.querySelectorAll('.timeline-item');
-        this.dots = document.querySelectorAll('.timeline-dot');
+        this.slider = document.querySelector('.development-slider');
+        this.items = document.querySelectorAll('.development-item');
+        this.dots = document.querySelectorAll('.development-dot');
         this.currentIndex = 0;
         this.isAnimating = false;
         this.autoPlayInterval = null;
@@ -58,17 +58,17 @@ class TimelineSlider {
 
     createDots() {
         const dotsContainer = document.createElement('div');
-        dotsContainer.className = 'timeline-navigation';
+        dotsContainer.className = 'development-navigation';
 
         this.items.forEach((_, index) => {
             const dot = document.createElement('button');
-            dot.className = 'timeline-dot';
+            dot.className = 'development-dot';
             dot.setAttribute('aria-label', `Slide ${index + 1}`);
             dotsContainer.appendChild(dot);
         });
 
         this.slider.parentNode.appendChild(dotsContainer);
-        this.dots = dotsContainer.querySelectorAll('.timeline-dot');
+        this.dots = dotsContainer.querySelectorAll('.development-dot');
     }
 
     startAutoPlay() {

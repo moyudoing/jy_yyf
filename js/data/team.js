@@ -1,45 +1,40 @@
 export const team = [
     {
-        id: 1,
-        name: '张教授',
-        title: '首席科学家',
-        image: '../../assets/images/team/member/zxs.jpg',
+        name: "张教授",
+        title: "首席科学家",
+        avatar: "./assets/images/team/leader.jpg",
+        description: "在食品科学领域拥有20年研究经验，主持多项国家级研究项目。",
         achievements: [
-            '国家特聘专家',
-            '食品科学与工程博士',
-            '20年营养食品研发经验'
+            {
+                title: "国家科技进步奖",
+                description: "因在食品加工技术领域的突出贡献获得表彰"
+            },
+            {
+                title: "发明专利",
+                description: "拥有15项发明专利"
+            }
         ],
         publications: [
-            '《菊芋提取物的营养价值研究》',
-            '《高熵技术在食品加工中的应用》'
+            "《功能性食品开发与应用》",
+            "《现代食品加工工艺》"
         ]
     },
     {
-        id: 2,
-        name: '李博士',
-        title: '研发主管',
-        image: '../../assets/images/team/member-2.jpg',
+        name: "李博士",
+        title: "技术总监",
+        avatar: "./assets/images/team/tech-director.jpg",
+        description: "专注于食品工程和营养学研究，负责产品配方开发。",
         achievements: [
-            '食品工程博士',
-            '多项发明专利持有人'
-        ],
-        publications: [
-            '《菊芋多糖提取工艺优化》',
-            '《功能性食品开发新方向》'
+            {
+                title: "技术创新奖",
+                description: "开发新型食品加工工艺"
+            }
         ]
     },
     {
-        id: 3,
-        name: '王工程师',
-        title: '工艺总监',
-        image: '../../assets/images/team/member-3.jpg',
-        achievements: [
-            '高级食品工程师',
-            '15年生产管理经验'
-        ],
-        publications: [
-            '《食品生产自动化控制》',
-            '《营养粉生产工艺改进》'
-        ]
+        name: "王工程师",
+        title: "生产主管",
+        avatar: "./assets/images/team/production-manager.jpg",
+        description: "拥有10年食品生产管理经验，确保产品质量稳定。"
     }
 ];
