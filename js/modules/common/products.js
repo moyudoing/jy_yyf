@@ -1,4 +1,4 @@
-import {products} from '../../data/product.js';
+import {products} from '../../data/products.js';
 
 export function initProducts() {
     const container = document.querySelector('.products-grid');

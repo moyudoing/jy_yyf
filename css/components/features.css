@@ -42,12 +42,13 @@
 }
 
 .features-grid {
-    left: 50px;
+    /*left: 10px;*/
     display: grid;
     grid-template-columns: repeat(3, minmax(50px, 250px));
     position: relative;
     gap: var(--spacing-xl);
     margin-top: var(--spacing-xl);
+    margin-left: var(--spacing-xl);
     padding: 0 var(--spacing-lg);
 }
 
