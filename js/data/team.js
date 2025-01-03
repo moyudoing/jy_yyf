@@ -1,8 +1,10 @@
+import {PATHS} from "../config.js";
+
 export const team = [
     {
         name: "张教授",
         title: "首席科学家",
-        avatar: "./assets/images/team/leader.jpg",
+        avatar: `${PATHS.images.team}/member/zxs.jpg`,
         description: "在食品科学领域拥有20年研究经验，主持多项国家级研究项目。",
         achievements: [
             {
