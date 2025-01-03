@@ -1,64 +1,224 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <link href="../assets/icons/favicon.ico" rel="icon" type="image/x-icon">
     <meta charset="UTF-8">
+    <link href="../assets/icons/favicon.ico" rel="icon" type="image/x-icon">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>产品原产地 - 菊芋营养粉</title>
-    <link href="../css/base/variables.css" rel="stylesheet">
-    <link href="../css/pages/home.css" rel="stylesheet">
-
+    <meta content="源自天然 • 科技萃取 • 营养健康" name="description">
+    <meta content="菊芋,营养粉,健康食品" name="keywords">
+    <meta content="菊芋营养粉研发团队" name="author">
+    <link href="../css/pages/products.css" rel="stylesheet">
 </head>
+
 <body>
+<!-- 滚动进度条 -->
+<div class="scroll-progress">
+    <div class="scroll-progress-bar"></div>
+</div>
+<!-- 导航栏 -->
 <nav class="navbar">
     <div class="container">
         <div class="logo">
-            <a href="../index.html">
-                <img alt="菊芋营养粉" class="logo-img" src="../assets/images/logo.png">
-            </a>
+            <img alt="菊芋营养粉" class="logo-img" src="../assets/images/logo.png">
         </div>
         <ul class="nav-links">
-            <li><a href="../index.html">首页</a></li>
-            <li><a href="../index.html#products">产品展示</a></li>
-            <li><a href="./qualifications.html">资质认证</a></li>
-            <li><a href="./origin.html">原产地介绍</a></li>
+            <li class="nav-dropdown">
+                <a href="../index.html#home">首页</a>
+                <div class="dropdown-content">
+                    <a href="../index.html#features">产品特点</a>
+                    <a href="../index.html#products">核心产品</a>
+                    <a href="../index.html#video">介绍视频</a>
+                    <a href="../index.html#reports">检测报告</a>
+                    <a href="../index.html#development">研发历程</a>
+                    <a href="../index.html#team">团队</a>
+                    <a href="../index.html#footer">达到底部</a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <a href="./products/index.html#home">产品</a>
+                <div class="dropdown-content">
+                    <a href="./products/high-entropy.html">菊芋高熵营养粉</a>
+                    <a href="./products/high-calcium.html">菊芋高钙营养粉</a>
+                    <a href="./products/powder.html">菊芋营养粉</a>
+                </div>
+            </li>
+            <li><a href="./manufacturing.html">生产工艺</a></li>
+            <li><a href="./origin.html">原产地</a></li>
+            <li><a href="./team.html">研发团队</a></li>
+            <li><a href="./contact.html">联系我们</a></li>
+
         </ul>
+        <button aria-label="菜单" class="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
 </nav>
 
-<div class="page-header">
-    <div class="container">
-        <h1>原产地介绍</h1>
-        <p>探索菊芋的生长环境与品质保证</p>
+<main>
+
+    <section id="products" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">产品展示</h2>
+                <a class="section-link" href="./products/powder.html">
+                    了解更多 <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="products-grid">
+                <!-- 将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </section>
+
+
+    <section id="features" class="section section-alt section-pattern">
+        <div class="container">
+            <div class="content-header">
+                <h2 class="section-title">产品特点</h2>
+                <p class="section-subtitle">源自天然，科技萃取，营养健康</p>
+                <a class="section-link" href="./products/powder.html">
+                    查看更多 <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="features-grid grid grid-3">
+                <!-- 特点卡片将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+
+</body>
+
+<script src="../js/pages/products.js"></script>
+
+<!-- 侧边导航 -->
+<div class="side-nav">
+    <div class="side-nav-item" data-target="home">
+        <ul>
+            <li>
+                <a href="#home"></a>
+                <i class="fas fa-home"></i>
+                <span class="side-nav-tooltip">首页</span>
+            </li>
+
+        </ul>
+
+    </div>
+    <div class="side-nav-item" data-target="features">
+        <i class="fas fa-star"></i>
+        <span class="side-nav-tooltip">产品特点</span>
+    </div>
+    <div class="side-nav-item" data-target="products">
+        <i class="fas fa-box"></i>
+        <span class="side-nav-tooltip">产品展示</span>
+    </div>
+    <div class="side-nav-item" data-target="development">
+        <i class="fas fa-history"></i>
+        <span class="side-nav-tooltip">研发历程</span>
+    </div>
+    <div class="side-nav-item" data-target="team">
+        <i class="fas fa-users"></i>
+        <span class="side-nav-tooltip">研发团队</span>
     </div>
 </div>
 
-<section class="origin-section">
+<!-- 页脚 -->
+<footer id="footer" class="footer">
     <div class="container">
-        <div class="origin-content">
-            <div class="origin-map">
-                <!-- 这里可以嵌入地图或使用图片 -->
+        <div class="footer-content">
+            <div class="footer-info">
+                <img alt="菊芋营养粉" class="footer-logo" src="../assets/images/logo.png">
+                <p>专注于健康食品研发</p>
             </div>
-            <div class="origin-features">
-                <div class="origin-feature">
-                    <i class="feature-icon">🌍</i>
-                    <h3>地理位置</h3>
-                    <p>位于黄土高原腹地，得天独厚的地理环境</p>
-                </div>
-                <div class="origin-feature">
-                    <i class="feature-icon">🌤️</i>
-                    <h3>气候条件</h3>
-                    <p>四季分明，光照充足，昼夜温差大</p>
-                </div>
-                <div class="origin-feature">
-                    <i class="feature-icon">🌱</i>
-                    <h3>土壤环境</h3>
-                    <p>富含矿物质的黄土地，营养价值高</p>
-                </div>
+            <div class="footer-links">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#products">产品</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>联系我们</h4>
+                <p>电话：XXX-XXXX-XXXX</p>
+                <p>邮箱：contact@example.com</p>
             </div>
         </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 菊芋营养粉. 保留所有权利.</p>
+        </div>
     </div>
-</section>
-</body>
+</footer>
+
 </html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="zh">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8"/>-->
+<!--    <link href="../assets/icons/favicon.ico" rel="icon" type="image/x-icon">-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta content="width=device-width, initial-scale=1.0" name="viewport">-->
+<!--    <title>产品原产地 - 菊芋营养粉</title>-->
+<!--    <link href="../css/base/variables.css" rel="stylesheet">-->
+<!--    <link href="../css/pages/home.css" rel="stylesheet">-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<nav class="navbar">-->
+<!--    <div class="container">-->
+<!--        <div class="logo">-->
+<!--            <a href="../index.html">-->
+<!--                <img alt="菊芋营养粉" class="logo-img" src="../assets/images/logo.png">-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <ul class="nav-links">-->
+<!--            <li><a href="../index.html">首页</a></li>-->
+<!--            <li><a href="../index.html#products">产品展示</a></li>-->
+<!--            <li><a href="./qualifications.html">资质认证</a></li>-->
+<!--            <li><a href="./origin.html">原产地介绍</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<!--<div class="page-header">-->
+<!--    <div class="container">-->
+<!--        <h1>原产地介绍</h1>-->
+<!--        <p>探索菊芋的生长环境与品质保证</p>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<section class="origin-section">-->
+<!--    <div class="container">-->
+<!--        <div class="origin-content">-->
+<!--            <div class="origin-map">-->
+<!--                &lt;!&ndash; 这里可以嵌入地图或使用图片 &ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="origin-features">-->
+<!--                <div class="origin-feature">-->
+<!--                    <i class="feature-icon">🌍</i>-->
+<!--                    <h3>地理位置</h3>-->
+<!--                    <p>位于黄土高原腹地，得天独厚的地理环境</p>-->
+<!--                </div>-->
+<!--                <div class="origin-feature">-->
+<!--                    <i class="feature-icon">🌤️</i>-->
+<!--                    <h3>气候条件</h3>-->
+<!--                    <p>四季分明，光照充足，昼夜温差大</p>-->
+<!--                </div>-->
+<!--                <div class="origin-feature">-->
+<!--                    <i class="feature-icon">🌱</i>-->
+<!--                    <h3>土壤环境</h3>-->
+<!--                    <p>富含矿物质的黄土地，营养价值高</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+<!--</body>-->
+<!--</html>-->

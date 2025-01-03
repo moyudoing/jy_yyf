@@ -8,7 +8,7 @@ export const products = [
         description: '采用高熵技术萃取，保留更多营养成分',
         price: '??¥',
         // originalPrice: '¥198',
-        images: `${PATHS.images.products}/jy/jy.jpg`,
+        images: `${PATHS.images.products}/jy-sd/sd.jpg`,
         gallery: [
                 'assets/images/products/high-entropy/1.jpg',
                 'assets/images/products/high-entropy/2.jpg',

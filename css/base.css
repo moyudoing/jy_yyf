@@ -1,0 +1,19 @@
+/* 导入布局样式 */
+@import "./base/sizes.css";
+@import "./base/typography.css";
+@import "./base/variables.css";
+@import "./base/reset.css";
+
+/* 导入布局样式 */
+@import './layout/container.css';
+@import './layout/grid.css';
+@import './layout/section.css';
+
+/*基础样式*/
+@import 'base/base_components/buttons.css';
+@import 'base/base_components/cards.css';
+@import './components/forms.css';
+@import 'base/base_components/modal.css';
+@import 'base/base_components/navbar.css';
+@import "base/base_components/footer.css";
+@import "base/base_components/banner.css";

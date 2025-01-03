@@ -99,11 +99,18 @@
 /* 区块内容 */
 .section-content {
     width: 100%;
-    max-width: var(--container-max-width);
+    max-width: var(--modal-width);
     margin: 0 auto;
     padding: 0 var(--spacing-xl);
     position: relative;
     z-index: 1;
+}
+
+.section-link {
+    color: var(--text-color-light);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.2;
 }
 
 /* 响应式调整 */
@@ -121,3 +128,5 @@
         padding: 0 var(--spacing-lg);
     }
 }
+
+

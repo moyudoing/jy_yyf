@@ -42,10 +42,13 @@
 }
 
 .features-grid {
+    left: 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-xl);
+    grid-template-columns: repeat(3, minmax(50px, 250px));
     position: relative;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    padding: 0 var(--spacing-lg);
 }
 
 .feature-card {
