@@ -9,7 +9,7 @@ export function initProducts() {
         container.innerHTML = products.map(product => `
             <div class="product-card" data-aos="fade-up">
                 <div class="product-image">
-                    <img src="${product.images.main}" alt="${product.name}">
+                    <img src="${product.images}" alt="${product.name}">
                 </div>
                 <div class="product-info">
                     <h3>${product.name}</h3>

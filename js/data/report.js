@@ -14,8 +14,8 @@ export const reports = [
         title: '重金属检测报告',
         description: '符合国家食品安全标准的重金属含量检测报告',
         date: '2024-01-20',
-        image: './assets/images/development/test (2).png',
-        thumbnail: "./assets/images/development/test (2).png"
+        image: `${PATHS.images.reports}/test (2).png`,
+        thumbnail: `${PATHS.images.reports}//test (2).png`
     },
     {
         id: 3,
