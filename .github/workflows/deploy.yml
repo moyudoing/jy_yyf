@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - vue-jy
+      - vue-jy  # 这里根据你的实际情况修改分支名称
 
 jobs:
   deploy:
@@ -15,24 +15,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20 # 或者更高版本，如 22
-
-      - name: Update npm
-        run: npm install -g npm@latest
-
-      - name: Remove package-lock.json and node_modules
-        run: |
-          rm -f package-lock.json
-          rm -rf node_modules
+          node-version: 20  # 根据你的项目需求选择合适的 Node.js 版本
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build
-        run: npm run build
+      - name: Build project
+        run: npm run build  # 根据你的项目实际构建命令修改
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./dist  # 根据你的实际构建产物目录修改
