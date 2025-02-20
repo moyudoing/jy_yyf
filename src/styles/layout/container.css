@@ -3,11 +3,8 @@
 
 /* 通用容器样式 */
 .container {
-    width: 100%;
-    /* 使用 CSS 变量设置最大宽度，可根据不同屏幕尺寸动态调整 */
-    max-width: var(--container-max-width-1);
+    width: 80%;
     margin: 0 auto;
-    /* 使用 CSS 变量设置内边距，可根据不同屏幕尺寸动态调整 */
     padding: 0 var(--spacing-xl);
 }
 
@@ -15,22 +12,24 @@
 .container-fluid {
     /* 流体容器，最大宽度为 100%，占满整个父容器 */
     max-width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
 }
 
 .container-narrow {
     /* 窄容器，最大宽度为 800px */
-    max-width: var(--container-max-width-2);
+    max-width: 78%;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
 }
 
 .container-wide {
     /* 宽容器，最大宽度为 1600px */
-    max-width: var(--container-max-width-wide);
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
 }
 
-/* 定义宽容器的变量，方便后续修改和管理 */
-:root {
-    --container-max-width-wide: 1600px;
-}
 
 /* 内容包装器样式 */
 .content-wrapper {
@@ -44,8 +43,9 @@
 .content-header {
     text-align: center;
     /* 使用 CSS 变量设置最大宽度，可根据不同屏幕尺寸动态调整 */
-    max-width: var(--container-max-width-2);
+    max-width: 70%;
     margin: 0 auto;
+
 }
 
 /* 内容主体样式 */
@@ -67,10 +67,8 @@
 /* 小屏幕设备（例如手机）样式调整 */
 @media (max-width: 768px) {
     .container {
-        /* 小屏幕下，容器最大宽度使用模态框宽度变量，可根据不同屏幕尺寸动态调整 */
-        max-width: var(--modal-width);
+        width: 95%;
         margin: 0 auto;
-        /* 小屏幕下，内边距使用较小的变量，可根据不同屏幕尺寸动态调整 */
         padding: 0 var(--spacing-lg);
     }
 
@@ -86,7 +84,7 @@
 @media (max-width: 992px) {
     .container {
         /* 中等屏幕下，容器最大宽度使用另一个变量，可根据不同屏幕尺寸动态调整 */
-        max-width: var(--container-max-width-3);
+        width: 90%;
         padding: 0 var(--spacing-md);
     }
 

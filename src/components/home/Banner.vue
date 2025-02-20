@@ -119,7 +119,7 @@ const bannerImages = ref<string[]>(Object.values(imageModules).map((module: any)
 /* 响应式调整 */
 @media (max-width: 768px) {
   .banner {
-    min-height: 500px;
+    max-height: var(--container-height-medium);
   }
 
   .banner-overlay h1 {

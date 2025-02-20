@@ -157,7 +157,7 @@ onMounted(() => {
 :root {
   --background-alt: #f8f9fa;
   --background-dark: #343a40;
-  --primary-color: #007bff;
+  --primary-color: #ff0000;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;

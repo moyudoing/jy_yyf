@@ -10,11 +10,11 @@ export const useProductStore = defineStore('productStore', {
                 name: '菊芋高熵营养粉',
                 slug: 'high-entropy',
                 description: '采用高熵技术萃取，保留更多营养成分',
-                price: '116元/盒',
+                price: '198元/盒',
                 specifications: '一盒20gX10袋',
                 images: `${PATHS.images.products}/jy-gga/gg.jpg`,
                 gallery: [
-                    'assets/images/products/high-entropy/1.jpg',
+                    'src/assets/images/products/high-entropy/1.jpg',
                     'assets/images/products/high-entropy/2.jpg',
                     'assets/images/products/high-entropy/3.jpg'
                 ],
@@ -30,7 +30,7 @@ export const useProductStore = defineStore('productStore', {
                 name: '菊芋高钙营养粉',
                 slug: 'high-calcium',
                 description: '添加天然钙源，补钙更健康',
-                price: '116元/盒',
+                price: '198元/盒',
                 specifications: '一盒20gX10袋',
                 images: `${PATHS.images.products}/jy-gga/gg.jpg`,
                 gallery: [
@@ -50,7 +50,7 @@ export const useProductStore = defineStore('productStore', {
                 name: '菊芋营养粉',
                 slug: 'powder',
                 description: '传统工艺制作，营养健康',
-                price: '116元/盒',
+                price: '198元/盒',
                 specifications: '一盒20gX10袋',
                 images: `${PATHS.images.products}/jy-gga/gg.jpg`,
                 gallery: [

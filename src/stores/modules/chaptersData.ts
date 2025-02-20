@@ -14,16 +14,16 @@ const CHAPTERS_DATA: Story[] = [
     {
         year: 2012,
         title: '发现之旅',
-        content: '农科团队在太行山考察时，意外发现当地长寿老人普遍食用一种野生菊芋根茎粉',
+        content: '',
         media: '/videos/discovery.mp4',
         quote: '大自然往往把最珍贵的馈赠，藏在最不起眼的角落'
     },
     {
         year: 2015,
         title: '科研突破',
-        content: '历经118次实验，成功研发出低温细胞破壁技术，保留98%活性营养成分',
+        content: '',
         media: '/images/lab-research.jpg',
-        quote: '科技是现代的炼金术，将平凡转化为非凡'
+        quote: ''
     },
 ];
 

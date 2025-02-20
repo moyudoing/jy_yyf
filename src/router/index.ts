@@ -7,9 +7,7 @@ import Home from '@/views/HomeView.vue'
 import Team from '@/views/TeamView/index.vue'
 
 
-
 const routes = [
-    // 定义根路径重定向到 /home
     {
         path: '/',
         redirect: '/home'

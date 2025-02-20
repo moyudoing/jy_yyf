@@ -1,7 +1,7 @@
 :root {
     /* 主色调 */
-    --dark-primary-color: #4e0e05;
-    --medium-primary: #671b10;
+    --dark-primary-color: #8c0505;
+    --medium-primary: #ae0606;
     --default-primary-color: rgb(220, 70, 38);
     --light-primary-color: rgb(239, 94, 63);
 
@@ -15,6 +15,7 @@
     --text-color: #333;
     --text-color-light: #666;
     --text-color-inverse: #fff;
+    --text-color-primary: #7e5f11;
 
     /* 背景颜色 */
     --background-color: #fff;

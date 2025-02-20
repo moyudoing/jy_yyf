@@ -1,69 +1,131 @@
-/* 基础区块 */
+/* 基础区块样式开始
+此样式定义了通用的区块样式，包含内边距、定位、溢出处理、最小高度和布局方式等
+*/
 .section {
+    /* 设置区块上下内边距为 --spacing-3xl 变量的值，左右内边距为 0 */
     padding: var(--spacing-3xl) 0;
+    /* 将区块的定位方式设置为相对定位，方便子元素进行绝对定位 */
     position: relative;
+    /* 当内容超出区块范围时，隐藏超出部分 */
     overflow: hidden;
+    /* 设置区块的最小高度为视口高度的 60% */
     min-height: 60vh;
+    /* 将区块的布局方式设置为 Flexbox 布局 */
     display: flex;
+    /* 设置 Flex 容器内的子元素垂直排列 */
     flex-direction: column;
+    /* 在垂直方向上居中对齐 Flex 容器内的子元素 */
     justify-content: center;
 }
 
-/* 区块头部 */
 .section-header {
+    /* 将头部内容居中对齐 */
     text-align: center;
-    margin-bottom: var(--spacing-2xl);
+    /* 设置头部底部外边距为 --spacing-2xl 变量的值 */
+    margin-bottom: var(--spacing-md);
+    /* 将头部的定位方式设置为相对定位，方便子元素进行绝对定位 */
     position: relative;
+    /* 设置头部的最大宽度为 800px */
     max-width: 800px;
+    /* 使头部在水平方向上居中 */
     margin-left: auto;
     margin-right: auto;
 }
 
+/* 区块主标题样式开始
+此样式定义了区块主标题的字体大小、粗细、颜色、边距等
+*/
 .section-title {
+    /* 设置标题的字体大小为 2.5rem */
     font-size: 2.5rem;
+    /* 设置标题的字体粗细为 700 */
     font-weight: 700;
+    /* 设置标题的颜色为 --text-color 变量的值 */
     color: var(--text-color);
-    margin-bottom: var(--spacing-md);
+    /* 设置标题底部外边距为 --spacing-md 变量的值 */
+    margin-bottom: var(--spacing-sm);
+    /* 将标题的定位方式设置为相对定位，方便伪元素进行绝对定位 */
     position: relative;
+    /* 将标题以行内块级元素的形式显示 */
     display: inline-block;
+    /* 设置标题的行高为 1.2 */
     line-height: 1.2;
 }
 
+/* 区块主标题下划线样式开始
+此样式通过伪元素为标题添加下划线效果
+*/
 .section-title::after {
+    /* 为伪元素添加内容，这里为空字符串 */
     content: '';
-    position: absolute;
+    /* 将伪元素的定位方式设置为绝对定位 */
+    position: relative;
+    /* 设置伪元素距离标题底部 10px */
     bottom: -10px;
+    /* 将伪元素的左边缘定位到标题的中心位置 */
     left: 50%;
+    /* 通过 translateX(-50%) 使伪元素在水平方向上居中 */
     transform: translateX(-50%);
+    /* 设置伪元素的宽度为 60px */
     width: 60px;
+    /* 设置伪元素的高度为 3px */
     height: 3px;
+    /* 设置伪元素的背景颜色为 --primary-color 变量的值 */
     background: var(--primary-color);
+    /* 设置伪元素的边框圆角为 --radius-full 变量的值，使其呈现圆角效果 */
     border-radius: var(--radius-full);
 }
 
+/* 区块三级标题样式开始
+此样式定义了区块三级标题的字体大小、粗细、颜色、边距等
+*/
 .section-title-h3 {
+    /* 设置标题的字体大小为 1.5rem */
     font-size: 1.5rem;
+    /* 设置标题的字体粗细为 700 */
     font-weight: 700;
+    /* 设置标题的颜色为 --text-color 变量的值 */
     color: var(--text-color);
+    /* 设置标题底部外边距为 --spacing-md 变量的值 */
     margin-bottom: var(--spacing-md);
+    /* 将标题的定位方式设置为相对定位，方便伪元素进行绝对定位 */
     position: relative;
+    /* 将标题以行内块级元素的形式显示 */
     display: inline-block;
+    /* 设置标题的行高为 1.2 */
     line-height: 1.2;
 }
 
+/* 区块副标题样式开始
+此样式定义了区块副标题的颜色、最大宽度、行高等
+*/
 .section-subtitle {
+    /* 设置副标题的颜色为 --text-color-light 变量的值 */
     color: var(--text-color-light);
+    /* 设置副标题的最大宽度为 600px */
     max-width: 600px;
+    /* 使副标题在水平方向上居中 */
     margin: 0 auto;
+    /* 设置副标题的行高为 1.6 */
     line-height: 1.6;
 }
 
-/* 区块变体 */
+/* 区块变体样式开始
+此部分样式定义了不同背景颜色和渐变的区块样式
+*/
+/* 替代背景色的区块样式开始
+此样式为区块设置替代背景颜色
+*/
 .section-alt {
+    /* 设置区块的背景颜色为 --background-alt 变量的值 */
     background: var(--background-alt);
 }
 
+/* 渐变背景的区块样式开始
+此样式为区块设置从 --background-color 到 --background-alt 的渐变背景
+*/
 .section-gradient {
+    /* 设置区块的背景为线性渐变，从 --background-color 过渡到 --background-alt */
     background: linear-gradient(
             to bottom,
             var(--background-color),
@@ -71,68 +133,121 @@
     );
 }
 
+/* 深色背景的区块样式开始
+此样式为区块设置深色背景，并改变文字颜色
+*/
 .section-dark {
+    /* 设置区块的背景颜色为 --background-dark 变量的值 */
     background: var(--background-dark);
+    /* 设置区块内文字的颜色为 --text-color-inverse 变量的值 */
     color: var(--text-color-inverse);
 }
 
-/* 区块装饰 */
+/* 区块装饰样式开始
+此部分样式定义了区块的背景和图案样式，用于美化区块
+*/
+/* 背景层样式开始
+此样式为区块添加半透明背景层
+*/
 .section-bg {
+    /* 将背景层的定位方式设置为绝对定位 */
     position: absolute;
+    /* 将背景层的顶部边缘与区块顶部对齐 */
     top: 0;
+    /* 将背景层的左边缘与区块左边缘对齐 */
     left: 0;
+    /* 设置背景层的宽度为 100%，覆盖整个区块 */
     width: 100%;
+    /* 设置背景层的高度为 100%，覆盖整个区块 */
     height: 100%;
+    /* 将背景层的层级设置为 -1，使其位于区块内容下方 */
     z-index: -1;
+    /* 设置背景层的透明度为 0.1 */
     opacity: 0.1;
 }
 
+/* 点状图案背景样式开始
+此样式为区块添加点状图案背景
+*/
 .section-pattern {
+    /* 设置背景图像为径向渐变，创建点状图案 */
     background-image: radial-gradient(
             circle at 1px 1px,
             var(--primary-color) 1px,
             transparent 0
     );
+    /* 设置背景图像的尺寸为 20px x 20px */
     background-size: 20px 20px;
 }
 
-/* 区块内容 */
+/* 区块内容样式开始
+此部分样式定义了区块内容区域和链接的样式
+*/
+/* 内容区域样式开始
+此样式定义了区块内容区域的宽度、最大宽度、边距等
+*/
 .section-content {
+    /* 设置内容区域的宽度为 100% */
     width: 100%;
+    /* 设置内容区域的最大宽度为 --modal-width 变量的值 */
     max-width: var(--modal-width);
+    /* 使内容区域在水平方向上居中 */
     margin: 0 auto;
+    /* 设置内容区域左右内边距为 --spacing-xl 变量的值 */
     padding: 0 var(--spacing-xl);
+    /* 将内容区域的定位方式设置为相对定位 */
     position: relative;
+    /* 将内容区域的层级设置为 1，使其位于背景层上方 */
     z-index: 1;
 }
 
+/* 链接样式开始
+此样式定义了区块内链接的颜色、最大宽度、行高等
+*/
 .section-link {
+    /* 设置链接的颜色为 --text-color-light 变量的值 */
     color: var(--text-color-light);
+    /* 设置链接的最大宽度为 600px */
     max-width: 600px;
+    /* 使链接在水平方向上居中 */
     margin: 0 auto;
+    /* 将链接的定位方式设置为相对定位 */
     position: relative;
+    /* 设置链接的行高为 1.2 */
     line-height: 1.2;
 }
 
+/* 向右箭头图标样式开始
+此样式定义了向右箭头图标的字体大小和定位方式
+*/
 .fa-arrow-right {
+    /* 设置图标的字体大小为 --font-size-sm 变量的值 */
     font-size: var(--font-size-sm);
+    /* 将图标的定位方式设置为相对定位 */
     position: relative;
 }
 
-/* 响应式调整 */
+/* 响应式调整样式开始
+此部分样式在小屏幕设备上调整区块样式，确保良好的显示效果
+*/
 @media (max-width: 768px) {
+    /* 当屏幕宽度小于等于 768px 时，调整区块样式 */
     .section {
+        /* 设置区块上下内边距为 --spacing-2xl 变量的值，左右内边距为 0 */
         padding: var(--spacing-2xl) 0;
+        /* 取消区块的最小高度限制 */
         min-height: auto;
     }
 
+    /* 当屏幕宽度小于等于 768px 时，调整主标题样式 */
     .section-title {
+        /* 设置主标题的字体大小为 2rem */
         font-size: 2rem;
     }
 
+    /* 当屏幕宽度小于等于 768px 时，调整内容区域样式 */
     .section-content {
+        /* 设置内容区域左右内边距为 --spacing-lg 变量的值 */
         padding: 0 var(--spacing-lg);
     }
 }
-
-
