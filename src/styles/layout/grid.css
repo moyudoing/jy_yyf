@@ -7,6 +7,14 @@
     grid-template-columns: repeat(3, 2fr);
     /* 设置网格项之间的间距为 --spacing-xl 变量指定的值 */
     gap: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+}
+
+/* 仪表盘网格样式 */
+.grid-20-15 {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr; /* 调整为 2  :1 的布局 */
+    gap: var(--spacing-md);
 }
 
 /* 当屏幕宽度小于等于 1200px 时，网格布局 */
@@ -14,5 +22,6 @@
     .grid {
         /* 将网格列模板改为 2 列，每列宽度为 1fr（灵活分配空间） */
         grid-template-columns: repeat(2, 1fr);
+        margin: var(--spacing-xl) 0;
     }
 }

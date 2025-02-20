@@ -1,15 +1,18 @@
 /* 初始尺寸变量 */
 :root {
-    --container-max-width-1: 1000px;
-    --container-max-width-2: 800px;
-    --container-max-width-3: 600px;
+    /* 容器最大宽度 */
+    --container-max-width-1: 90%;
+    --container-max-width-2: 70%;
+    --container-max-width-3: 50%;
 
+    /* 容器高度 */
     --container-height-high: 600px;
     --container-height-medium: 450px;
     --container-height-1: 400px;
     --container-height-2: 300px;
     --container-height-3: 200px;
 
+    /* 导航栏、页脚、侧边栏和模态框尺寸 */
     --navbar-height: 80px;
     --footer-height: 300px;
     --sidebar-width: 280px;
@@ -45,7 +48,7 @@
     --input-padding: var(--spacing-md);
     --modal-padding: var(--spacing-xl);
 
-    /* Shadows */
+    /* 阴影 */
     --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -55,10 +58,10 @@
     --z-modal: 1100;
     --z-fixed: 1200;
 
-    /* Transitions */
+    /* 过渡效果 */
     --transition: all 0.3s ease;
 
-    /* font-size */
+    /* 字体大小 */
     --font-size-xs: 8px;
     --font-size-xs-p: 10px;
     --font-size-sm: 12px;
@@ -82,94 +85,40 @@
 /* 中等屏幕尺寸（例如平板） */
 @media (max-width: 992px) {
     :root {
-        --container-max-width-1: 800px;
-        --container-max-width-2: 600px;
-        --container-max-width-3: 400px;
+        /* 容器最大宽度 */
+        --container-max-width-1: 80%;
+        --container-max-width-2: 60%;
+        --container-max-width-3: 40%;
 
+        /* 容器高度 */
         --container-height-high: 500px;
         --container-height-medium: 350px;
         --container-height-1: 300px;
         --container-height-2: 250px;
         --container-height-3: 150px;
 
+        /* 导航栏、页脚、侧边栏和模态框尺寸 */
         --navbar-height: 70px;
         --footer-height: 250px;
         --sidebar-width: 220px;
         --modal-width: 500px;
 
         /* 间距 */
-        --spacing-xs: 0.2rem; /* 3.2px */
-        --spacing-sm: 0.4rem; /* 6.4px */
-        --spacing-md: 0.8rem; /* 12.8px */
-        --spacing-lg: 1.2rem; /* 19.2px */
-        --spacing-xl: 1.6rem; /* 25.6px */
-        --spacing-2xl: 2.4rem; /* 38.4px */
-        --spacing-3xl: 3.2rem; /* 51.2px */
+        --spacing-xs: 0.2rem;
+        --spacing-sm: 0.4rem;
+        --spacing-md: 0.8rem;
+        --spacing-lg: 1.2rem;
+        --spacing-xl: 1.6rem;
+        --spacing-2xl: 2.4rem;
+        --spacing-3xl: 3.2rem;
         --spacing-4xl: 4rem;
         --spacing-10xl: 9rem;
 
         /* 图标尺寸 */
-        --icon-sm: 0.8rem; /* 12.8px */
-        --icon-md: 1.2rem; /* 19.2px */
-        --icon-lg: 1.6rem; /* 25.6px */
-        --icon-xl: 2.4rem; /* 38.4px */
-
-        /* 字体大小 */
-        --font-size-xs: 7px;
-        --font-size-xs-p: 9px;
-        --font-size-sm: 11px;
-        --font-size-sm-p: 13px;
-        --font-size-md: 15px;
-        --font-size-lg: 18px;
-        --font-size-xl: 22px;
-        --font-size-2xl: 26px;
-        --font-size-3xl: 30px;
-        --font-size-4xl: 34px;
-        --font-size-5xl: 38px;
-        --font-size-6xl: 42px;
-        --font-size-7xl: 46px;
-
-        --font-size-h1: var(--font-size-7xl);
-        --font-size-h2: var(--font-size-3xl);
-        --font-size-h3: var(--font-size-xl);
-        --font-size-h4: var(--font-size-xl);
-    }
-}
-
-/* 小屏幕尺寸（例如手机） */
-@media (max-width: 768px) {
-    :root {
-        --container-max-width-1: 600px;
-        --container-max-width-2: 400px;
-        --container-max-width-3: 300px;
-
-        --container-height-high: 400px;
-        --container-height-medium: 300px;
-        --container-height-1: 250px;
-        --container-height-2: 200px;
-        --container-height-3: 120px;
-
-        --navbar-height: 60px;
-        --footer-height: 200px;
-        --sidebar-width: 180px;
-        --modal-width: 400px;
-
-        /* 间距 */
-        --spacing-xs: 0.15rem; /* 2.4px */
-        --spacing-sm: 0.3rem; /* 4.8px */
-        --spacing-md: 0.6rem; /* 9.6px */
-        --spacing-lg: 0.9rem; /* 14.4px */
-        --spacing-xl: 1.2rem; /* 19.2px */
-        --spacing-2xl: 1.8rem; /* 28.8px */
-        --spacing-3xl: 2.4rem; /* 38.4px */
-        --spacing-4xl: 3rem;
-        --spacing-10xl: 7rem;
-
-        /* 图标尺寸 */
-        --icon-sm: 0.6rem; /* 9.6px */
-        --icon-md: 0.9rem; /* 14.4px */
-        --icon-lg: 1.2rem; /* 19.2px */
-        --icon-xl: 1.8rem; /* 28.8px */
+        --icon-sm: 0.8rem;
+        --icon-md: 1.2rem;
+        --icon-lg: 1.6rem;
+        --icon-xl: 2.4rem;
 
         /* 字体大小 */
         --font-size-xs: 6px;
@@ -179,16 +128,121 @@
         --font-size-md: 14px;
         --font-size-lg: 16px;
         --font-size-xl: 20px;
-        --font-size-2xl: 24px;
-        --font-size-3xl: 28px;
-        --font-size-4xl: 32px;
-        --font-size-5xl: 36px;
-        --font-size-6xl: 40px;
-        --font-size-7xl: 44px;
+        --font-size-2xl: 22px;
+        --font-size-3xl: 24px;
+        --font-size-4xl: 26px;
+        --font-size-5xl: 28px;
+        --font-size-6xl: 30px;
+        --font-size-7xl: 32px;
+    }
+}
 
-        --font-size-h1: var(--font-size-7xl);
-        --font-size-h2: var(--font-size-3xl);
-        --font-size-h3: var(--font-size-xl);
-        --font-size-h4: var(--font-size-xl);
+/* 小屏幕尺寸（例如手机） */
+@media (max-width: 768px) {
+    :root {
+        /* 容器最大宽度 */
+        --container-max-width-1: 90%;
+        --container-max-width-2: 70%;
+        --container-max-width-3: 50%;
+
+        /* 容器高度 */
+        --container-height-high: 400px;
+        --container-height-medium: 300px;
+        --container-height-1: 250px;
+        --container-height-2: 200px;
+        --container-height-3: 120px;
+
+        /* 导航栏、页脚、侧边栏和模态框尺寸 */
+        --navbar-height: 60px;
+        --footer-height: 200px;
+        --sidebar-width: 180px;
+        --modal-width: 400px;
+
+        /* 间距 */
+        --spacing-xs: 0.15rem;
+        --spacing-sm: 0.3rem;
+        --spacing-md: 0.6rem;
+        --spacing-lg: 0.9rem;
+        --spacing-xl: 1.2rem;
+        --spacing-2xl: 1.8rem;
+        --spacing-3xl: 2.4rem;
+        --spacing-4xl: 3rem;
+        --spacing-10xl: 7rem;
+
+        /* 图标尺寸 */
+        --icon-sm: 0.6rem;
+        --icon-md: 0.9rem;
+        --icon-lg: 1.2rem;
+        --icon-xl: 1.8rem;
+
+        /* 字体大小 */
+        --font-size-xs: 5px;
+        --font-size-xs-p: 7px;
+        --font-size-sm: 9px;
+        --font-size-sm-p: 11px;
+        --font-size-md: 13px;
+        --font-size-lg: 15px;
+        --font-size-xl: 17px;
+        --font-size-2xl: 19px;
+        --font-size-3xl: 21px;
+        --font-size-4xl: 23px;
+        --font-size-5xl: 25px;
+        --font-size-6xl: 27px;
+        --font-size-7xl: 29px;
+    }
+}
+
+/* 超小屏幕尺寸（例如小手机） */
+@media (max-width: 576px) {
+    :root {
+        /* 容器最大宽度 */
+        --container-max-width-1: 95%;
+        --container-max-width-2: 80%;
+        --container-max-width-3: 60%;
+
+        /* 容器高度 */
+        --container-height-high: 350px;
+        --container-height-medium: 250px;
+        --container-height-1: 200px;
+        --container-height-2: 150px;
+        --container-height-3: 100px;
+
+        /* 导航栏、页脚、侧边栏和模态框尺寸 */
+        --navbar-height: 50px;
+        --footer-height: 150px;
+        --sidebar-width: 150px;
+        --modal-width: 300px;
+
+        /* 间距 */
+        --spacing-xs: 0.1rem;
+        --spacing-sm: 0.2rem;
+        --spacing-md: 0.4rem;
+        --spacing-lg: 0.6rem;
+        --spacing-xl: 0.8rem;
+        --spacing-2xl: 1.2rem;
+        --spacing-3xl: 1.6rem;
+        --spacing-4xl: 2rem;
+        --spacing-10xl: 5rem;
+
+        /* 图标尺寸 */
+        --icon-sm: 0.4rem;
+        --icon-md: 0.6rem;
+        --icon-lg: 0.8rem;
+        --icon-xl: 1.2rem;
+
+        /* 字体大小 */
+        --font-size-xs: 4px;
+        --font-size-xs-p: 6px;
+        --font-size-sm: 8px;
+        --font-size-sm-p: 10px;
+        --font-size-md: 12px;
+        --font-size-lg: 14px;
+        --font-size-xl: 16px;
+        --font-size-2xl: 18px;
+        --font-size-3xl: 20px;
+        --font-size-4xl: 22px;
+        --font-size-5xl: 24px;
+        --font-size-6xl: 26px;
+        --font-size-7xl: 28px;
     }
 }

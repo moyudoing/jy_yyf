@@ -5,6 +5,7 @@ import Report from "../components/home/Reports.vue";
 import IntroduceVideo from "@/components/home/IntroduceVideo.vue";
 import Ingredients from "@/components/home/Ingredients.vue";
 import HealthBenefitsTimeline from "@/components/home/HealthBenefitsTimeline.vue";
+import RelatedLinks from "@/components/home/RelatedLinks.vue";
 
 </script>
 
@@ -17,6 +18,7 @@ import HealthBenefitsTimeline from "@/components/home/HealthBenefitsTimeline.vue
     <Report/>
     <Ingredients/>
     <HealthBenefitsTimeline/>
+    <RelatedLinks/>
   </div>
 
 </template>

@@ -1,7 +1,7 @@
 <template>
   <section id="video" class="video-section">
     <div class="container">
-      <div class="content-header">
+      <div class="section-header">
         <h2 class="section-title">产品视频</h2>
         <p class="section-subtitle">了解我们的产品工艺和特点</p>
       </div>
@@ -48,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 // 引用视频元素
 const videoRef = ref<HTMLVideoElement | null>(null);
@@ -80,14 +80,14 @@ const togglePlay = () => {
 // 快退
 const rewind = () => {
   if (videoRef.value) {
-    videoRef.value.currentTime -= 10;
+    videoRef.value.currentTime = Math.max(0, videoRef.value.currentTime - 10);
   }
 };
 
 // 快进
 const forward = () => {
   if (videoRef.value) {
-    videoRef.value.currentTime += 10;
+    videoRef.value.currentTime = Math.min(videoRef.value.duration, videoRef.value.currentTime + 10);
   }
 };
 
@@ -144,29 +144,36 @@ const formatTime = (time: number) => {
   return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 };
 
+// 更新视频进度
+const updateProgress = () => {
+  if (videoRef.value) {
+    progress.value = (videoRef.value.currentTime / videoRef.value.duration) * 100;
+    requestAnimationFrame(updateProgress);
+  }
+};
+
+// 视频播放结束处理
+const handleVideoEnded = () => {
+  isPlaying.value = false;
+  progress.value = 0;
+};
+
 onMounted(() => {
   if (videoRef.value) {
-    videoRef.value.addEventListener('timeupdate', () => {
-    });
+    videoRef.value.addEventListener('timeupdate', updateProgress);
+    videoRef.value.addEventListener('ended', handleVideoEnded);
+  }
+});
+
+onUnmounted(() => {
+  if (videoRef.value) {
+    videoRef.value.removeEventListener('timeupdate', updateProgress);
+    videoRef.value.removeEventListener('ended', handleVideoEnded);
   }
 });
 </script>
 
 <style scoped>
-/* 定义公共样式变量 */
-:root {
-  --background-alt: #f8f9fa;
-  --background-dark: #343a40;
-  --primary-color: #ff0000;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-3xl: 4rem;
-  --radius-sm: 0.25rem;
-  --radius-lg: 0.5rem;
-  --radius-full: 9999px;
-  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-}
 
 /* 视频部分容器 */
 .video-section {
@@ -295,7 +302,7 @@ onMounted(() => {
   left: 0;
   top: 0;
   height: 100%;
-  background: var(--primary-color);
+  background: var(--background-dark);
   border-radius: var(--radius-full);
 }
 

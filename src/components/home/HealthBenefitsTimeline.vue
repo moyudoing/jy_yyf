@@ -12,7 +12,9 @@
             </div>
           </template>
           <h4>{{ benefit.title }}</h4>
-          <p>{{ benefit.description }}</p>
+          <div v-for="description in benefit.descriptions">
+            <p>{{ description }}</p>
+          </div>
           <div class="related-ingredients">
             <el-tag v-for="ing in benefit.relatedTo" :key="ing" effect="dark">
               {{ ing }}
