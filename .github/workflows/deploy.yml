@@ -17,6 +17,14 @@ jobs:
         with:
           node-version: 20  # 根据你的项目需求选择合适的 Node.js 版本
 
+      - name: Clear npm cache
+        run: npm cache clean --force
+
+      - name: Remove package-lock.json and node_modules
+        run: |
+          rm -f package-lock.json
+          rm -rf node_modules
+
       - name: Install dependencies
         run: npm install
 
