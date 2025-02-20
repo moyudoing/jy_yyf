@@ -9,6 +9,7 @@ export default defineConfig({
     vue(),
     vueJsx() // 添加 vueJsx 插件
   ],
+  base: '/jy_yyf/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src')
