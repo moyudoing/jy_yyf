@@ -73,7 +73,7 @@
 }
 
 .footer-links a:hover {
-  color: var(--primary-color);
+  color: var(--text-color-light);
 }
 
 .footer-contact p {
