@@ -1,6 +1,15 @@
-import {defineStore} from 'pinia';
-import {PATHS} from '../config.ts';
-
+import { defineStore } from 'pinia';
+// 手动导入图片
+import highEntropyImg from '@/assets/images/products/jy-gga/gg.jpg';
+import highEntropyGallery1 from '@/assets/images/products/jy-gga/gg.jpg';
+import highEntropyGallery2 from '@/assets/images/products/jy-gga/gg.jpg';
+import highEntropyGallery3 from '@/assets/images/products/jy-gga/gg.jpg';
+import highCalciumGallery1 from '@/assets/images/products/jy-gga/gg.jpg';
+import highCalciumGallery2 from '@/assets/images/products/jy-gga/gg.jpg';
+import highCalciumGallery3 from '@/assets/images/products/jy-gga/gg.jpg';
+import powderGallery1 from '@/assets/images/products/jy-gga/gg.jpg';
+import powderGallery2 from '@/assets/images/products/jy-gga/gg.jpg';
+import powderGallery3 from '@/assets/images/products/jy-gga/gg.jpg';
 
 export const useProductStore = defineStore('productStore', {
     state: () => ({
@@ -12,11 +21,11 @@ export const useProductStore = defineStore('productStore', {
                 description: '采用高熵技术萃取，保留更多营养成分',
                 price: '198元/盒',
                 specifications: '一盒20gX10袋',
-                images: `${PATHS.images.products}/jy-gga/gg.jpg`,
+                images: highEntropyImg,
                 gallery: [
-                    'src/assets/images/products/high-entropy/1.jpg',
-                    'assets/images/products/high-entropy/2.jpg',
-                    'assets/images/products/high-entropy/3.jpg'
+                    highEntropyGallery1,
+                    highEntropyGallery2,
+                    highEntropyGallery3
                 ],
                 features: [
                     '高熵萃取工艺',
@@ -32,11 +41,11 @@ export const useProductStore = defineStore('productStore', {
                 description: '添加天然钙源，补钙更健康',
                 price: '198元/盒',
                 specifications: '一盒20gX10袋',
-                images: `${PATHS.images.products}/jy-gga/gg.jpg`,
+                images: highEntropyImg, // 假设和高熵营养粉的主图一样
                 gallery: [
-                    '../../assets/images/products/high-calcium/1.jpg',
-                    '../../assets/images/products/high-calcium/2.jpg',
-                    '../../assets/images/products/high-calcium/3.jpg'
+                    highCalciumGallery1,
+                    highCalciumGallery2,
+                    highCalciumGallery3
                 ],
                 features: [
                     '天然钙源添加',
@@ -52,11 +61,11 @@ export const useProductStore = defineStore('productStore', {
                 description: '传统工艺制作，营养健康',
                 price: '198元/盒',
                 specifications: '一盒20gX10袋',
-                images: `${PATHS.images.products}/jy-gga/gg.jpg`,
+                images: highEntropyImg, // 假设和高熵营养粉的主图一样
                 gallery: [
-                    '../../assets/images/products/powder/1.jpg',
-                    '../../assets/images/products/powder/2.jpg',
-                    '../../assets/images/products/powder/3.jpg'
+                    powderGallery1,
+                    powderGallery2,
+                    powderGallery3
                 ],
                 features: [
                     '传统工艺',
@@ -80,7 +89,7 @@ export const useProductStore = defineStore('productStore', {
         updateProduct(product: { id: number; [key: string]: any }) {
             const index = this.products.findIndex(p => p.id === product.id);
             if (index !== -1) {
-                this.products[index] = {...this.products[index], ...product};
+                this.products[index] = { ...this.products[index], ...product };
             }
         }
     }

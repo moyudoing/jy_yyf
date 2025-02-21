@@ -1,5 +1,10 @@
 // @/stores/modules/reportData.ts
 import { defineStore } from 'pinia';
+import image1 from '@/assets/images/reports/test (1).png';
+import image2 from '@/assets/images/reports/test (2).png';
+import image3 from '@/assets/images/reports/test (3).png';
+import image4 from '@/assets/images/reports/test (4).png';
+import image5 from '@/assets/images/reports/test (5).png';
 
 // 定义报告类型
 interface Report {
@@ -18,40 +23,40 @@ export const initReports: Report[] = [
         title: '营养成分检测报告',
         description: '国家认证检测机构出具的营养成分分析报告',
         date: '2024-01-15',
-        image: 'src/assets/images/reports/test (1).png',
-        thumbnail: 'src/assets/images/reports/test (1).png',
+        image: image1,
+        thumbnail: image1,
     },
     {
         id: 2,
         title: '营养成分检测报告',
         description: '国家认证检测机构出具的营养成分分析报告',
         date: '2024-01-15',
-        image: 'src/assets/images/reports/test (2).png',
-        thumbnail: 'src/assets/images/reports/test (2).png',
+        image: image2,
+        thumbnail: image2,
     },
     {
         id: 3,
         title: '营养成分检测报告',
         description: '国家认证检测机构出具的营养成分分析报告',
         date: '2024-01-15',
-        image: 'src/assets/images/reports/test (3).png',
-        thumbnail: 'src/assets/images/reports/test (3).png',
+        image: image3,
+        thumbnail: image3,
     },
     {
         id: 4,
         title: '营养成分检测报告',
         description: '国家认证检测机构出具的营养成分分析报告',
         date: '2024-01-15',
-        image: 'src/assets/images/reports/test (4).png',
-        thumbnail: 'src/assets/images/reports/test (4).png',
+        image: image4,
+        thumbnail: image4,
     },
     {
         id: 5,
         title: '营养成分检测报告',
         description: '国家认证检测机构出具的营养成分分析报告',
         date: '2024-01-15',
-        image: 'src/assets/images/reports/test (5).png',
-        thumbnail: 'src/assets/images/reports/test (5).png',
+        image: image5,
+        thumbnail: image5,
     },
     // 可按需添加更多报告
 ];
