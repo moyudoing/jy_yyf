@@ -1,21 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import Product from '@/views/ProductView/index.vue';
-import GuozhuangVillage from "@/views/GuozhuangVillageView.vue";
-import RDProcess from "@/views/RDProcessView.vue";
-import Home from '@/views/HomeView.vue';
-import Team from '@/views/TeamView/index.vue';
-
 const routes = [
     {
         path: '/',
         redirect: '/home',
-        component: ()=>import('@/layout/index.vue'),
+        component: () => import('@/layout/index.vue'),
         children: [
             {
                 path: 'home',
                 name: 'homeView',
-                component: ()=> Home,
+                component: () => import('@/views/HomeView.vue'),
                 meta: {
                     title: '首页',
                     icon: 'home'
@@ -24,7 +18,7 @@ const routes = [
             {
                 path: 'product',
                 name: 'productView',
-                component: ()=> Product,
+                component: () => import('@/views/ProductView/index.vue'),
                 meta: {
                     title: '产品',
                     icon: 'product'
@@ -33,7 +27,7 @@ const routes = [
             {
                 path: 'guozhuangVillage',
                 name: 'guozhuangVillageView',
-                component: ()=> GuozhuangVillage,
+                component: () => import('@/views/GuozhuangVillageView.vue'),
                 meta: {
                     title: '美丽郭庄',
                     icon: 'guozhuangVillage'
@@ -42,7 +36,7 @@ const routes = [
             {
                 path: 'rDProcess',
                 name: 'rDProcessView',
-                component: ()=> RDProcess,
+                component: () => import('@/views/RDProcessView.vue'),
                 meta: {
                     title: '研发历程',
                     icon: 'rDProcess'
@@ -51,7 +45,7 @@ const routes = [
             {
                 path: 'team',
                 name: 'teamView',
-                component: ()=> Team,
+                component: () => import('@/views/TeamView/index.vue'),
                 meta: {
                     title: '团队',
                     icon: 'team'
