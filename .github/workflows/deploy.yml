@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - vue-jy  # 这里根据你的实际情况修改分支名称
+      - vue-jy
 
 jobs:
   deploy:
@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20  # 根据你的项目需求选择合适的 Node.js 版本
+          node-version: 20
 
       - name: Clear npm cache
         run: npm cache clean --force
@@ -29,7 +29,26 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npm run build  # 根据你的项目实际构建命令修改
+        run: npm run build
+
+      - name: Check build output for assets
+        run: |
+          echo "Checking build output for assets..."
+          ls -R ./dist/assets
+          if [ -z "$(ls -A ./dist/assets)" ]; then
+            echo "No assets found in dist/assets directory."
+          else
+            echo "Assets found in dist/assets directory."
+          fi
+
+      - name: Check stores references in build
+        run: |
+          echo "Checking stores references in build..."
+          if grep -r '@/assets' ./dist; then
+            echo "Assets references found in build."
+          else
+            echo "No assets references found in build."
+          fi
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
