@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 const routes = [
     {
@@ -56,7 +56,7 @@ const routes = [
 ];
 
 const mainRouter = createRouter({
-    history: createWebHistory('/jy_yyf/'),
+    history: createWebHashHistory('/jy_yyf/'),
     routes
 });
 
