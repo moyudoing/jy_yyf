@@ -1,10 +1,12 @@
 <template>
   <section id="video" class="video-section">
     <div class="container">
+
       <div class="section-header">
         <h2 class="section-title">产品视频</h2>
         <p class="section-subtitle">了解我们的产品工艺和特点</p>
       </div>
+
       <div class="video-container">
         <video ref="videoRef" id="products-video" class="video-player">
           <source src="@/assets/videos/introduce.mp4" type="video/mp4">
