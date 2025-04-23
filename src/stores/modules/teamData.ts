@@ -57,7 +57,13 @@ const initialTeamMembers: TeamMember[] = [
         name: "余凡",
         title: "产品总监",
         avatar: `${PATHS.images.team}/member/余凡.png`,
-        description: "拥有10年食品生产管理经验，确保产品质量稳定。"
+        description: "拥有10年食品生产管理经验，确保产品质量稳定。",
+        achievements: [
+            {
+                title: "技术创新奖",
+                description: "开发新型食品加工工艺"
+            }
+        ]
     }
 ];
 
