@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 
 import('@/assets/images/guozhuang/达成种植协议.jpg')
-import('@/assets/images/guozhuang/菊芋种植.jpg')
+import('@/assets/images/guozhuang/菊芋种植.png')
 import('@/assets/images/guozhuang/AIGC.png')
 import('@/assets/images/agreement/青岛虹竹.png')
 import('@/assets/images/experiment/河南工业大学实验.jpg')
@@ -37,7 +37,7 @@ const CHAPTERS_DATA: Story[] = [
         year: 2023,
         title: '试点种植菊芋',
         content: '',
-        media: 'src/assets/images/guozhuang/菊芋种植.jpg',
+        media: 'src/assets/images/guozhuang/菊芋种植.png',
         quote: '菊芋抗旱耐寒，易于田间管理，适合郭庄村发展需要，我们使用菊芋种植作为郭庄村打破发展桎梏的钥匙'
     },
     {
