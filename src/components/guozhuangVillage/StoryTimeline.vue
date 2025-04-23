@@ -15,7 +15,7 @@ import { defineProps } from 'vue';
 // 定义 props
 defineProps({
   chapters: {
-    type: Array as () => Array<{ [key: string]: any }>, // 这里 chapters 应该是数组类型
+    type: Array as () => Array<{ [key: string]: any }>,
     required: true
   },
   index: {
@@ -23,6 +23,7 @@ defineProps({
     required: true
   },
 });
+
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger);
 

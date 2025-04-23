@@ -2,8 +2,11 @@
   <section class="story-container">
     <!-- 时间轴故事 -->
     <StoryTimeline :chapters="chapters" index="123"/>
+
     <!-- 转场到产品 -->
     <TransitionEnd />
+
+    <StoryTimeline :chapters="chapters" index="123"/>
   </section>
 </template>
 
