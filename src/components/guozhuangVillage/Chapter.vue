@@ -1,16 +1,19 @@
 <template>
   <div class="chapter" ref="chapterRef">
+
     <!-- 时间线 -->
     <div class="timeline-marker">
       <div class="year">{{ chapter.year }}</div>
       <div class="line" ref="lineRef"></div>
     </div>
+
     <!-- 内容区 -->
     <div class="container chapter-content">
       <h2 class="chapter-title">
         <span class="number">0{{ index + 1 }}</span>
         {{ chapter.title }}
       </h2>
+
       <!-- 媒体容器 -->
       <div class="story-media">
         <video
@@ -57,7 +60,7 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-// 定义颜色变量
+
 $primary-color: #2c3e50;
 $accent-color: #e74c3c;
 $golden-light: #f1c40f;
