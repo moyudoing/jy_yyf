@@ -1,11 +1,8 @@
 @import '../base/sizes.css';
 
 .grid {
-    /* 使用 CSS Grid 布局 */
     display: grid;
-    /* 定义网格列模板，创建 3 列，每列宽度为 2fr（灵活分配空间） */
     grid-template-columns: repeat(3, 2fr);
-    /* 设置网格项之间的间距为 --spacing-xl 变量指定的值 */
     gap: var(--spacing-xl);
     margin: var(--spacing-xl) 0;
 }

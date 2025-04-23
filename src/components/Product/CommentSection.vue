@@ -76,8 +76,7 @@ const deleteComment = (id: number) => {
 <style scoped>
 /* 评论区整体样式 */
 .comment-section {
-  width: 95%;
-  max-width: 800px;
+  width: 90%;
   margin: 0 auto;
   padding: 30px;
   border: 1px solid #e0e0e0;
@@ -113,13 +112,13 @@ const deleteComment = (id: number) => {
 
 .input-field:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-color: #ff0000;
+  box-shadow: 0 0 5px rgba(62, 1, 2, 0.5);
 }
 
 .submit-button {
   padding: 12px 20px;
-  background-color: #007bff;
+  background-color: #b80412;
   color: white;
   border: none;
   border-radius: 5px;

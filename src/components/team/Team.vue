@@ -137,7 +137,7 @@ const hideMemberDetails = () => {
 }
 
 .member-title {
-  color: var(--primary-color);
+  color: var(--dark-primary-color);
   font-size: 0.875rem;
   margin-bottom: var(--spacing-md);
 }

@@ -108,6 +108,8 @@ const playStepAnimation = (index: number) => {
 
 <style lang="scss" scoped>
 .process-flow {
+  margin: 0 auto;
+  width: 90%;
   position: relative;
 
   .step-card {

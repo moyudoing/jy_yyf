@@ -23,14 +23,14 @@ interface TeamState {
 // 团队成员的初始数据
 const initialTeamMembers: TeamMember[] = [
     {
-        name: "张教授",
-        title: "首席科学家",
-        avatar: `${PATHS.images.team}/member/zxs.jpg`,
-        description: "在食品科学领域拥有20年研究经验，主持多项国家级研究项目。",
+        name: "陈金身",
+        title: "河南工业大学教授",
+        avatar: `${PATHS.images.team}/member/陈金身.png`,
+        description: "在材料和食品科学领域拥有多年研究经验。",
         achievements: [
             {
-                title: "国家科技进步奖",
-                description: "因在食品加工技术领域的突出贡献获得表彰"
+                title: "发表多篇论文",
+                description: "发表论文一百余篇"
             },
             {
                 title: "发明专利",
@@ -38,15 +38,14 @@ const initialTeamMembers: TeamMember[] = [
             }
         ],
         publications: [
-            "《功能性食品开发与应用》",
-            "《现代食品加工工艺》"
+                "《现代食品加工工艺》"
         ]
     },
     {
-        name: "李博士",
+        name: "张艳艳",
         title: "技术总监",
-        avatar: `${PATHS.images.team}/member/zxs.jpg`,
-        description: "专注于食品工程和营养学研究，负责产品配方开发。",
+        avatar: `${PATHS.images.team}/member/张艳艳.jpg`,
+        description: "团队管理。",
         achievements: [
             {
                 title: "技术创新奖",
@@ -55,9 +54,9 @@ const initialTeamMembers: TeamMember[] = [
         ]
     },
     {
-        name: "王工程师",
-        title: "生产主管",
-        avatar: `${PATHS.images.team}/member/zxs.jpg`,
+        name: "余凡",
+        title: "产品总监",
+        avatar: `${PATHS.images.team}/member/余凡.png`,
         description: "拥有10年食品生产管理经验，确保产品质量稳定。"
     }
 ];

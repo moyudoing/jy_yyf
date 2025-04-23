@@ -8,7 +8,7 @@
     </div>
 
     <!-- 内容区 -->
-    <div class="container chapter-content">
+    <div class="chapter-content">
       <h2 class="chapter-title">
         <span class="number">0{{ index + 1 }}</span>
         {{ chapter.title }}
@@ -63,8 +63,8 @@ onMounted(() => {
 
 $primary-color: #2c3e50;
 $accent-color: #e74c3c;
-$golden-light: #f1c40f;
-$background-gradient-start: rgba(190, 21, 21, 0.9);
+$golden-light: #f40000;
+$background-gradient-start: rgba(151, 8, 8, 0.9);
 $background-gradient-end: rgba(67, 6, 6, 0.9);
 
 .chapter {
@@ -152,7 +152,7 @@ $background-gradient-end: rgba(67, 6, 6, 0.9);
 
     .text-content {
       margin-top: 3rem;
-      padding-left: 10%;
+      padding-left: 2rem;
 
       .paragraph {
         font-size: 1.2rem;
@@ -175,7 +175,7 @@ $background-gradient-end: rgba(67, 6, 6, 0.9);
         font-style: italic;
         font-size: 1.4rem;
         margin: 2rem 0;
-        padding: 2rem;
+        padding: 1rem;
         border-left: 4px solid $golden-light;
         background: rgba(255, 255, 255, 0.05);
         color: #777;

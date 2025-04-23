@@ -4,7 +4,7 @@ import('@/assets/images/guozhuang/达成种植协议.jpg')
 import('@/assets/images/guozhuang/种植菊芋.jpg')
 import('@/assets/images/guozhuang/AIGC.png')
 import('@/assets/images/agreement/青岛虹竹.png')
-import('@/assets/images/experiment/河南工业大学实验 .jpg')
+import('@/assets/images/experiment/河南工业大学实验.jpg')
 import ('@/assets/videos/2023郭庄村调研.mp4')
 import('@/assets/images/products/display/产品展示1.jpg')
 
@@ -37,14 +37,14 @@ const CHAPTERS_DATA: Story[] = [
         year: 2023,
         title: '试点种植菊芋',
         content: '',
-        media: 'src/assets/images/guozhuang/种植菊芋.JPG',
+        media: 'src/assets/images/guozhuang/种植菊芋.jpg',
         quote: '菊芋抗旱耐寒，易于田间管理，适合郭庄村发展需要，我们使用菊芋种植作为郭庄村打破发展桎梏的钥匙'
     },
     {
         year: 2023,
         title: '研发菊芋营养粉',
         content: '',
-        media: 'src/assets/images/experiment/河南工业大学实验 .jpg',
+        media: 'src/assets/images/experiment/河南工业大学实验.jpg',
         quote: '我们与郭庄村村委员会达成种植协议，划定10亩的土地作为我们的试验田'
     },
     {
